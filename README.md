@@ -1,4 +1,4 @@
-# GitHub Deep Dive Training
+# GitHub Deep Dive Training updated
 
 A practical training repository for learning Git and GitHub.
 
