@@ -1,0 +1,69 @@
+
+
+name: Bug report
+description: Report an error, incorrect instruction, or broken example.
+title: "[BUG]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem.
+        Please provide enough information to help us understand and reproduce it.
+
+  - type: input
+    id: lesson
+    attributes:
+      label: Affected lesson or file
+      description: Which lesson or file contains the problem?
+      placeholder: docs/github/module-01-code/lesson-02-branches.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the problem
+      description: Explain what is incorrect or not working.
+      placeholder: Describe the issue clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should the lesson, command, or example do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the commands or steps needed to reproduce the problem.
+      placeholder: |
+        1. Open the lesson.
+        2. Run the example command.
+        3. Observe the result.
+    validations:
+      required: false
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include relevant details such as operating system, Git version, or GitHub feature.
+      placeholder: Windows 11, Git 2.x
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add screenshots, terminal output, or relevant links.
+    validations:
+      required: false
+

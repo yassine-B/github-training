@@ -1,0 +1,69 @@
+
+
+name: Feature request
+description: Suggest a new lesson, example, exercise, or repository improvement.
+title: "[FEATURE]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an improvement.
+        Explain the problem or learning need that your suggestion would address.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Request category
+      options:
+        - New lesson
+        - New practical exercise
+        - Improve existing documentation
+        - Add a command example
+        - Add a GitHub feature explanation
+        - Repository maintenance
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: related_module
+    attributes:
+      label: Related module or lesson
+      placeholder: Module 01 - Code
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+      description: Describe the missing information or learning difficulty.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Explain what you would like to see added or changed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe any alternative approaches.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Include useful links, examples, or references.
+    validations:
+      required: false
+
