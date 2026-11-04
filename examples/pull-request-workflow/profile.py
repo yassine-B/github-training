@@ -1,6 +1,6 @@
 def build_profile(user):
     """
-    Build a public user profile.
+    Build a public user profile without private account fields.
     """
 
     return {
