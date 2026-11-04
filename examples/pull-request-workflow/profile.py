@@ -6,7 +6,5 @@ def build_profile(user):
     return {
         "id": user.id,
         "username": user.username,
-        "display_name": user.display_name,
-        "email": user.email,
-        "is_staff": user.is_staff,
+        "display_name": user.display_name or user.username,
     }
