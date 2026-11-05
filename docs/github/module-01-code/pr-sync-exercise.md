@@ -21,3 +21,5 @@ Push the synchronized branch.
 Inspect the Pull Request.
 
 You should see the latest main changes reflected in your feature branch.
+
+Merge the feature branch with main .
