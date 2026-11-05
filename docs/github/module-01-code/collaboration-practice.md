@@ -17,3 +17,7 @@ Practise the GitHub Pull Request workflow.
 ## Result
 
 The collaboration exercise is complete.
+
+## Additional learning
+
+Pull Requests make changes easier to review before they are merged.
