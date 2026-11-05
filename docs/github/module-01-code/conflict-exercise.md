@@ -1,3 +1,3 @@
 # Merge Conflict Exercise
 
-Project status: Initial
+Project status: Resolved successfully
