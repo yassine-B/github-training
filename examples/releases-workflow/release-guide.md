@@ -7,3 +7,6 @@ Create a new release, generate a tag if it doesn't exist, and include release no
 
 ```bash
 gh release create v1.0.0 --title "v1.0.0" --notes "Initial stable release"
+```
+
+## Updated this file to test the automatic release notes file
