@@ -1,1 +1,92 @@
+# ==============================
+# Environment variables / secrets
+# ==============================
 
+.env
+.env.*
+!.env.example
+!.env.template
+
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checking and lint caches
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# Django local files
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# ==============================
+# Node.js / React
+# ==============================
+
+node_modules/
+dist/
+build/
+coverage/
+
+.npm/
+.pnpm-store/
+
+# Vite cache
+.vite/
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+logs/
+
+# ==============================
+# Editors / IDEs
+# ==============================
+
+.vscode/
+.idea/
+
+# ==============================
+# Operating systems
+# ==============================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Temporary files
+# ==============================
+
+*.tmp
+*.temp
+*.swp
+*.bak
