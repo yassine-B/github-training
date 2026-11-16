@@ -1,0 +1,7 @@
+1. Conventional Commits
+
+Conventional Commits define a structured commit-message format.
+
+General format:
+
+<type>[optional scope][optional !]: <description>
