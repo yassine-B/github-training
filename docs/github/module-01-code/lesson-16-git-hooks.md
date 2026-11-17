@@ -1,30 +1,9 @@
-# **Module 1 — Code tab: Lesson 16**
-
-**Git Hooks: Automating Checks and Enforcing Repository Standards**
-
-
-
-Practical lesson
-
-Advanced Git workflow
-
-
-
-This lesson teaches you how to automate checks around Git operations, enforce commit-message conventions, and prepare reliable workflows for your DRF + React projects.
-
-- **Filename:** `docs/github/module-01-code/lesson-16-git-hooks.md`
-- **Suggested branch:** `docs/add-git-hooks-lesson`
-- **Practice repository:** `github-deep-dive-training`
-
-You will work with native Git hooks, the `pre-commit` framework, Husky, lint-staged, and Commitlint. You will also learn why local hooks are not a replacement for GitHub Actions or server-side enforcement.
-
 # Module 1 — Code Tab
-
 # Lesson 16: Git Hooks — Automating Checks and Enforcing Repository Standards
 
-**Filename:** `docs/github/module-01-code/lesson-16-git-hooks.md`\
-**Suggested branch:** `docs/add-git-hooks-lesson`\
-**Level:** Advanced\
+**Filename:** `docs/github/module-01-code/lesson-16-git-hooks.md`
+**Suggested branch:** `docs/add-git-hooks-lesson`
+**Level:** Advanced
 **Practice repository:** `github-deep-dive-training`
 
 ---
@@ -61,14 +40,14 @@ Hooks allow you to automate repetitive tasks and enforce development standards.
 
 ### Real-world examples
 
-| Event                   | Automated task                          |
-| ----------------------- | --------------------------------------- |
-| Before commit           | Check formatting and whitespace         |
-| Before commit           | Run linting on changed files            |
-| Before commit           | Detect accidentally committed secrets   |
-| Validate commit message | Enforce Conventional Commits            |
-| Before push             | Run selected tests                      |
-| After checkout          | Prepare local development environment   |
+| Event | Automated task |
+|---|---|
+| Before commit | Check formatting and whitespace |
+| Before commit | Run linting on changed files |
+| Before commit | Detect accidentally committed secrets |
+| Validate commit message | Enforce Conventional Commits |
+| Before push | Run selected tests |
+| After checkout | Prepare local development environment |
 | Before receiving a push | Enforce server-side repository policies |
 
 ### Why use Git hooks?
@@ -93,7 +72,7 @@ Git hooks are stored in the repository's Git directory.
 
 The default location is:
 
-```
+```text
 .git/
 └── hooks/
     ├── applypatch-msg.sample
@@ -115,7 +94,7 @@ To activate a hook, create a file with the corresponding hook name, without `.sa
 
 For example:
 
-```
+```text
 .git/hooks/pre-commit
 .git/hooks/commit-msg
 .git/hooks/pre-push
@@ -127,19 +106,19 @@ Later in this lesson, you will learn how to share hooks using `pre-commit` and H
 
 ### Inspect your hooks
 
-```
+```bash
 ls .git/hooks
 ```
 
 On Windows PowerShell:
 
-```
+```powershell
 Get-ChildItem .git/hooks
 ```
 
 You can also inspect the configured hooks directory:
 
-```
+```bash
 git config --show-origin --get core.hooksPath
 ```
 
@@ -194,14 +173,14 @@ GitHub users generally do not manage GitHub's underlying server-side Git hooks d
 
 ### Comparison
 
-| Feature                           | Client-side         | Server-side                    |
-| --------------------------------- | ------------------- | ------------------------------ |
-| Execution location                | Developer's machine | Git server                     |
-| Runs before local commit          | Yes                 | No                             |
-| Can validate commit messages      | Yes                 | Yes, where supported           |
-| Can be bypassed by local user     | Often               | Controlled by server           |
-| Shared automatically by Git clone | No                  | Server-managed                 |
-| Suitable as security enforcement  | No                  | Yes, when correctly configured |
+| Feature | Client-side | Server-side |
+|---|---|---|
+| Execution location | Developer's machine | Git server |
+| Runs before local commit | Yes | No |
+| Can validate commit messages | Yes | Yes, where supported |
+| Can be bypassed by local user | Often | Controlled by server |
+| Shared automatically by Git clone | No | Server-managed |
+| Suitable as security enforcement | No | Yes, when correctly configured |
 
 **Critical security principle:** A local hook can be skipped using commands such as `git commit --no-verify`. Never rely on a local hook alone to protect production branches or enforce security requirements.
 
@@ -304,11 +283,11 @@ Possible use:
 
 ### 5.9 Server-side hooks
 
-| Hook           | Purpose                                                       |
-| -------------- | ------------------------------------------------------------- |
-| `pre-receive`  | Runs before a push is accepted; can reject the entire push    |
-| `update`       | Runs for each ref being updated; can reject an individual ref |
-| `post-receive` | Runs after refs have been updated successfully                |
+| Hook | Purpose |
+|---|---|
+| `pre-receive` | Runs before a push is accepted; can reject the entire push |
+| `update` | Runs for each ref being updated; can reject an individual ref |
+| `post-receive` | Runs after refs have been updated successfully |
 
 You do not need to implement server-side hooks in this exercise. Focus on client-side hooks and GitHub's remote enforcement mechanisms.
 
@@ -324,7 +303,7 @@ We will create a hook that checks staged changes for whitespace errors.
 
 From the root of your training repository, use PowerShell:
 
-```
+```powershell
 @'
 #!/bin/sh
 
@@ -355,31 +334,31 @@ Git for Windows includes Git Bash, which can execute standard shell hook scripts
 
 Create a test file:
 
-```
+```powershell
 New-Item -ItemType File -Path hook-test.txt
 ```
 
 Add some content:
 
-```
+```powershell
 "Testing Git hooks" | Set-Content hook-test.txt
 ```
 
 Stage the file:
 
-```
+```bash
 git add hook-test.txt
 ```
 
 Commit:
 
-```
+```bash
 git commit -m "test: verify pre-commit hook"
 ```
 
 Expected behavior:
 
-```
+```text
 Running pre-commit checks...
 Pre-commit checks passed.
 ```
@@ -390,14 +369,14 @@ Introduce a trailing whitespace error into a file and stage it.
 
 For example, create a file containing a line with trailing spaces:
 
-```
+```powershell
 "Invalid trailing spaces   " | Set-Content whitespace-test.txt
 git add whitespace-test.txt
 ```
 
 Try to commit:
 
-```
+```bash
 git commit -m "test: verify whitespace validation"
 ```
 
@@ -405,7 +384,7 @@ The hook should reject the commit if Git detects the whitespace error.
 
 Fix the file, stage it again, and retry.
 
-```
+```powershell
 "Corrected line" | Set-Content whitespace-test.txt
 git add whitespace-test.txt
 git commit -m "test: fix whitespace validation"
@@ -425,13 +404,13 @@ Conventional Commits define a structured commit-message format.
 
 General format:
 
-```
+```text
 <type>[optional scope][optional !]: <description>
 ```
 
 Examples:
 
-```
+```text
 feat(auth): add JWT authentication
 
 fix(api): handle missing customer records
@@ -449,19 +428,19 @@ feat(api)!: remove deprecated response format
 
 Common types:
 
-| Type       | Purpose                                           |
-| ---------- | ------------------------------------------------- |
-| `feat`     | New functionality                                 |
-| `fix`      | Bug fix                                           |
-| `docs`     | Documentation                                     |
-| `style`    | Formatting or style changes without logic changes |
-| `refactor` | Code restructuring                                |
-| `perf`     | Performance improvement                           |
-| `test`     | Tests                                             |
-| `build`    | Build system or dependency changes                |
-| `ci`       | CI/CD changes                                     |
-| `chore`    | Maintenance                                       |
-| `revert`   | Reverting a previous commit                       |
+| Type | Purpose |
+|---|---|
+| `feat` | New functionality |
+| `fix` | Bug fix |
+| `docs` | Documentation |
+| `style` | Formatting or style changes without logic changes |
+| `refactor` | Code restructuring |
+| `perf` | Performance improvement |
+| `test` | Tests |
+| `build` | Build system or dependency changes |
+| `ci` | CI/CD changes |
+| `chore` | Maintenance |
+| `revert` | Reverting a previous commit |
 
 A breaking change can be indicated with `!` or a `BREAKING CHANGE:` footer.
 
@@ -469,7 +448,7 @@ A breaking change can be indicated with `!` or a `BREAKING CHANGE:` footer.
 
 PowerShell:
 
-```
+```powershell
 @'
 #!/bin/sh
 
@@ -507,7 +486,7 @@ This hook:
 
 Try:
 
-```
+```bash
 git commit -m "update files"
 ```
 
@@ -515,7 +494,7 @@ Expected: the commit should be rejected.
 
 Try:
 
-```
+```bash
 git commit -m "added new feature"
 ```
 
@@ -523,7 +502,7 @@ Expected: rejected.
 
 ### 7.4 Test valid messages
 
-```
+```bash
 git commit -m "docs(github): add git hooks lesson"
 ```
 
@@ -541,7 +520,7 @@ For this training exercise, we will use it to check for whitespace errors in com
 
 Create:
 
-```
+```powershell
 @'
 #!/bin/sh
 
@@ -561,7 +540,7 @@ exit 0
 
 Test:
 
-```
+```bash
 git push origin HEAD
 ```
 
@@ -571,19 +550,19 @@ If the hook passes, Git continues the push.
 
 In a real project, you might use `pre-push` to run:
 
-```
+```bash
 pytest
 ```
 
 Or:
 
-```
+```bash
 npm run test
 ```
 
 Or:
 
-```
+```bash
 npm run lint
 ```
 
@@ -608,13 +587,13 @@ Git supports a custom hooks directory through `core.hooksPath`.
 
 For example:
 
-```
+```bash
 git config core.hooksPath .githooks
 ```
 
 You can then store hooks in the repository:
 
-```
+```text
 .githooks/
 ├── pre-commit
 ├── commit-msg
@@ -625,7 +604,7 @@ The `.githooks` directory can be committed.
 
 However, each developer must configure the directory locally:
 
-```
+```bash
 git config core.hooksPath .githooks
 ```
 
@@ -645,7 +624,7 @@ It is especially useful for Python projects and multi-language repositories.
 
 Instead of manually writing multiple hook scripts, you define the checks in:
 
-```
+```text
 .pre-commit-config.yaml
 ```
 
@@ -662,25 +641,25 @@ The framework manages hook environments and executes configured checks.
 
 Official documentation:
 
-[https://pre-commit.com/](https://pre-commit.com/)
+https://pre-commit.com/
 
 ## 11. Install pre-commit
 
 For a Python development environment:
 
-```
+```bash
 pip install pre-commit
 ```
 
 Verify:
 
-```
+```bash
 pre-commit --version
 ```
 
 Install the Git hook:
 
-```
+```bash
 pre-commit install
 ```
 
@@ -688,7 +667,7 @@ This installs a hook that invokes the framework when you commit.
 
 To install the commit-message hook as well, if your configuration includes commit-message validation:
 
-```
+```bash
 pre-commit install --hook-type commit-msg
 ```
 
@@ -702,7 +681,7 @@ Create this file in the repository root:
 
 Example:
 
-```
+```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -736,16 +715,16 @@ Each repository specifies:
 
 Examples:
 
-| Hook                      | Purpose                                   |
-| ------------------------- | ----------------------------------------- |
-| `trailing-whitespace`     | Removes trailing whitespace               |
-| `end-of-file-fixer`       | Ensures a final newline                   |
-| `check-yaml`              | Checks YAML syntax                        |
-| `check-json`              | Checks JSON syntax                        |
+| Hook | Purpose |
+|---|---|
+| `trailing-whitespace` | Removes trailing whitespace |
+| `end-of-file-fixer` | Ensures a final newline |
+| `check-yaml` | Checks YAML syntax |
+| `check-json` | Checks JSON syntax |
 | `check-added-large-files` | Prevents oversized files from being added |
-| `detect-private-key`      | Detects certain private-key patterns      |
-| `ruff`                    | Python linting                            |
-| `ruff-format`             | Python formatting                         |
+| `detect-private-key` | Detects certain private-key patterns |
+| `ruff` | Python linting |
+| `ruff-format` | Python formatting |
 
 The private-key hook is useful, but it is not a complete secret scanner. Use dedicated secret scanning and remote security controls as well.
 
@@ -753,25 +732,25 @@ The private-key hook is useful, but it is not a complete secret scanner. Use ded
 
 Run against all files:
 
-```
+```bash
 pre-commit run --all-files
 ```
 
 Run against staged files:
 
-```
+```bash
 pre-commit run
 ```
 
 Run a specific hook:
 
-```
+```bash
 pre-commit run trailing-whitespace --all-files
 ```
 
 Update hook revisions:
 
-```
+```bash
 pre-commit autoupdate
 ```
 
@@ -789,7 +768,7 @@ For example:
 
 After a hook modifies files, inspect and stage the changes again:
 
-```
+```bash
 git status
 git diff
 git add .
@@ -809,7 +788,7 @@ For a Django REST Framework backend, you could use:
 
 Example configuration:
 
-```
+```yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -834,7 +813,7 @@ Those checks belong in additional scripts or CI workflows.
 
 ### Example project structure
 
-```
+```text
 backend/
 ├── config/
 ├── apps/
@@ -866,7 +845,7 @@ It is commonly used with:
 
 Official documentation:
 
-[https://typicode.github.io/husky/](https://typicode.github.io/husky/)
+https://typicode.github.io/husky/
 
 ### Why use Husky?
 
@@ -880,13 +859,13 @@ Husky allows you to execute hooks, while lint-staged helps run tools only agains
 
 Inside your React project:
 
-```
+```bash
 npm install --save-dev husky
 ```
 
 Initialize:
 
-```
+```bash
 npx husky init
 ```
 
@@ -894,7 +873,7 @@ This configures Husky for the project and creates a `.husky` directory.
 
 A typical structure:
 
-```
+```text
 frontend/
 ├── .husky/
 │   └── pre-commit
@@ -908,7 +887,7 @@ Husky's initialization may also add a `prepare` script to `package.json`.
 
 Check:
 
-```
+```json
 {
   "scripts": {
     "prepare": "husky"
@@ -920,7 +899,7 @@ The `prepare` script helps install hooks when project dependencies are installed
 
 ## 17. Install lint-staged
 
-```
+```bash
 npm install --save-dev lint-staged
 ```
 
@@ -928,7 +907,7 @@ Add scripts and configuration to `package.json`.
 
 Example:
 
-```
+```json
 {
   "scripts": {
     "lint": "eslint .",
@@ -952,13 +931,13 @@ The configuration associates file patterns with commands.
 
 For example:
 
-```
+```text
 src/components/Button.tsx
 ```
 
 will match:
 
-```
+```text
 *.{js,jsx,ts,tsx}
 ```
 
@@ -970,13 +949,13 @@ Do not configure multiple formatters that fight over the same files. Decide whic
 
 Create or edit:
 
-```
+```text
 .husky/pre-commit
 ```
 
 Content:
 
-```
+```sh
 npx lint-staged
 ```
 
@@ -991,7 +970,7 @@ Now, when a developer commits:
 
 ### Example workflow
 
-```
+```bash
 git add src/components/Button.tsx
 git commit -m "feat(ui): add reusable button component"
 ```
@@ -1006,7 +985,7 @@ Husky manages hook execution. Commitlint validates commit messages.
 
 Install:
 
-```
+```bash
 npm install --save-dev @commitlint/cli @commitlint/config-conventional
 ```
 
@@ -1014,7 +993,7 @@ Create:
 
 **Filename:** `commitlint.config.js`
 
-```
+```javascript
 export default {
   extends: ["@commitlint/config-conventional"],
 };
@@ -1024,13 +1003,13 @@ Create:
 
 **Filename:** `.husky/commit-msg`
 
-```
+```sh
 npx --no -- commitlint --edit "$1"
 ```
 
 Now try:
 
-```
+```bash
 git commit -m "update button"
 ```
 
@@ -1038,7 +1017,7 @@ Expected: rejected.
 
 Try:
 
-```
+```bash
 git commit -m "feat(ui): add reusable button component"
 ```
 
@@ -1055,33 +1034,31 @@ Commitlint supports additional rules and configurations. You can later configure
 
 Official documentation:
 
-[https://commitlint.js.org/](https://commitlint.js.org/)
+https://commitlint.js.org/
 
 ## 20. Husky vs native Git hooks vs pre-commit
 
-| Feature                   | Native Git hooks      | pre-commit                         | Husky                            |
-| ------------------------- | --------------------- | ---------------------------------- | -------------------------------- |
-| Primary use               | Custom Git automation | Managed hooks                      | JavaScript project hooks         |
-| Python support            | Yes                   | Yes                                | Possible, but not its main focus |
-| Node.js support           | Yes                   | Yes                                | Yes                              |
-| Shared configuration      | Manual                | Yes                                | Yes                              |
-| Commit-message validation | Custom script         | With suitable hook                 | With Commitlint                  |
-| Staged-file checks        | Custom script         | Supported by suitable hooks        | lint-staged                      |
-| Best fit                  | Custom workflows      | Python and multi-language projects | JavaScript/TypeScript projects   |
+| Feature | Native Git hooks | pre-commit | Husky |
+|---|---|---|---|
+| Primary use | Custom Git automation | Managed hooks | JavaScript project hooks |
+| Python support | Yes | Yes | Possible, but not its main focus |
+| Node.js support | Yes | Yes | Yes |
+| Shared configuration | Manual | Yes | Yes |
+| Commit-message validation | Custom script | With suitable hook | With Commitlint |
+| Staged-file checks | Custom script | Supported by suitable hooks | lint-staged |
+| Best fit | Custom workflows | Python and multi-language projects | JavaScript/TypeScript projects |
 
 ### Which should you choose?
 
 For a DRF + React project:
 
 **Backend**
-
 - pre-commit
 - Ruff
 - Python formatting and linting
 - selected fast validation checks
 
 **Frontend**
-
 - Husky
 - lint-staged
 - ESLint
@@ -1089,7 +1066,6 @@ For a DRF + React project:
 - Commitlint
 
 **Repository**
-
 - GitHub Actions
 - Required status checks
 - Branch protection or repository rulesets
@@ -1104,7 +1080,7 @@ Avoid installing several competing hook managers without a clear reason. Decide 
 
 A professional development workflow should distribute checks across several stages.
 
-```
+```text
 Developer writes code
         |
         v
@@ -1167,7 +1143,7 @@ A developer may bypass a local hook. They should not be able to bypass required 
 
 Imagine a SaaS repository:
 
-```
+```text
 my-saas-platform/
 ├── backend/
 │   ├── apps/
@@ -1252,23 +1228,23 @@ A hook that takes 30 seconds on every commit will frustrate developers.
 
 Use this division:
 
-| Check                     | Recommended stage             |
-| ------------------------- | ----------------------------- |
-| Trailing whitespace       | Pre-commit                    |
-| Formatting                | Pre-commit                    |
-| Fast linting              | Pre-commit                    |
-| Commit-message validation | Commit-msg                    |
-| Selected unit tests       | Pre-push or CI                |
-| Full test suite           | CI                            |
-| Integration tests         | CI                            |
-| Build verification        | CI                            |
-| Deployment                | Protected deployment workflow |
+| Check | Recommended stage |
+|---|---|
+| Trailing whitespace | Pre-commit |
+| Formatting | Pre-commit |
+| Fast linting | Pre-commit |
+| Commit-message validation | Commit-msg |
+| Selected unit tests | Pre-push or CI |
+| Full test suite | CI |
+| Integration tests | CI |
+| Build verification | CI |
+| Deployment | Protected deployment workflow |
 
 ### Bypassing hooks
 
 For example:
 
-```
+```bash
 git commit --no-verify -m "chore: temporary test"
 ```
 
@@ -1276,7 +1252,7 @@ This bypasses certain local commit hooks.
 
 For pushes:
 
-```
+```bash
 git push --no-verify
 ```
 
@@ -1323,19 +1299,19 @@ Tasks:
 
 Test messages:
 
-```
+```text
 update files
 ```
 
-```
+```text
 feat(auth): add authentication
 ```
 
-```
+```text
 fix(api): handle invalid requests
 ```
 
-```
+```text
 feat(api)!: remove deprecated endpoint
 ```
 
@@ -1430,19 +1406,19 @@ Include:
 
 Suggested policy:
 
-| Area                   | Tool                       | Stage      |
-| ---------------------- | -------------------------- | ---------- |
-| Python linting         | Ruff                       | Pre-commit |
-| Python formatting      | Ruff formatter             | Pre-commit |
-| Frontend linting       | ESLint                     | Pre-commit |
-| Frontend formatting    | Prettier                   | Pre-commit |
-| Staged-file processing | lint-staged                | Pre-commit |
-| Commit messages        | Commitlint                 | Commit-msg |
-| Backend tests          | pytest                     | CI         |
-| Frontend tests         | Vitest                     | CI         |
-| Type checking          | TypeScript                 | CI         |
-| Build verification     | Vite                       | CI         |
-| Security scanning      | GitHub security tools / CI | CI         |
+| Area | Tool | Stage |
+|---|---|---|
+| Python linting | Ruff | Pre-commit |
+| Python formatting | Ruff formatter | Pre-commit |
+| Frontend linting | ESLint | Pre-commit |
+| Frontend formatting | Prettier | Pre-commit |
+| Staged-file processing | lint-staged | Pre-commit |
+| Commit messages | Commitlint | Commit-msg |
+| Backend tests | pytest | CI |
+| Frontend tests | Vitest | CI |
+| Type checking | TypeScript | CI |
+| Build verification | Vite | CI |
+| Security scanning | GitHub security tools / CI | CI |
 
 ---
 
@@ -1454,7 +1430,7 @@ Return to your `github-deep-dive-training` repository.
 
 Create a branch:
 
-```
+```bash
 git switch main
 git pull origin main
 git switch -c docs/add-git-hooks-lesson
@@ -1462,13 +1438,13 @@ git switch -c docs/add-git-hooks-lesson
 
 Create the directory if it does not already exist:
 
-```
+```powershell
 New-Item -ItemType Directory -Force docs/github/module-01-code
 ```
 
 Create:
 
-```
+```text
 docs/github/module-01-code/lesson-16-git-hooks.md
 ```
 
@@ -1476,7 +1452,7 @@ Paste this lesson into the file.
 
 Also create:
 
-```
+```text
 docs/github/module-01-code/git-hooks-policy.md
 ```
 
@@ -1484,32 +1460,32 @@ Use the policy exercise to document the standards you would apply to a real proj
 
 ## 31. Review your changes
 
-```
+```bash
 git status
 ```
 
 Inspect:
 
-```
+```bash
 git diff
 ```
 
 Check whitespace:
 
-```
+```bash
 git diff --check
 ```
 
 Stage the files:
 
-```
+```bash
 git add docs/github/module-01-code/lesson-16-git-hooks.md
 git add docs/github/module-01-code/git-hooks-policy.md
 ```
 
 Review staged changes:
 
-```
+```bash
 git diff --cached
 ```
 
@@ -1517,7 +1493,7 @@ git diff --cached
 
 Use:
 
-```
+```bash
 git commit -m "docs(github): add git hooks and commit validation lesson"
 ```
 
@@ -1525,7 +1501,7 @@ If your commit-message hook is installed, this message should satisfy the basic 
 
 Push:
 
-```
+```bash
 git push -u origin docs/add-git-hooks-lesson
 ```
 
@@ -1542,13 +1518,13 @@ On GitHub:
 
 Suggested title:
 
-```
+```text
 docs(github): add Git hooks training lesson
 ```
 
 Suggested description:
 
-```
+```markdown
 ## Summary
 
 Adds Module 1 — Lesson 16: Git Hooks.
@@ -1585,7 +1561,7 @@ Review the changes, resolve any feedback, and merge according to the workflow yo
 
 After merging:
 
-```
+```bash
 git switch main
 git pull origin main
 ```
@@ -1594,7 +1570,7 @@ git pull origin main
 
 First inspect existing tags:
 
-```
+```bash
 git tag --list
 ```
 
@@ -1602,19 +1578,19 @@ Check whether `module-01-lesson-16` already exists. Do not overwrite an existing
 
 If it does not exist, create the annotated tag:
 
-```
+```bash
 git tag -a module-01-lesson-16 -m "Module 1 Lesson 16: Git Hooks"
 ```
 
 Push it:
 
-```
+```bash
 git push origin module-01-lesson-16
 ```
 
 Verify:
 
-```
+```bash
 git show module-01-lesson-16
 ```
 
@@ -1633,13 +1609,13 @@ Open your repository:
 3. Choose the existing tag `module-01-lesson-16`.
 4. Set the release title:
 
-```
+```text
 Module 1 — Lesson 16: Git Hooks
 ```
 
 5. Add these release notes:
 
-```
+```markdown
 # Module 1 — Lesson 16: Git Hooks
 
 This lesson introduces automated Git workflows.
@@ -1685,49 +1661,49 @@ docs/github/module-01-code/lesson-16-git-hooks.md
 
 ### Git hooks fundamentals
 
-- I understand what Git hooks are.
-- I understand client-side hooks.
-- I understand server-side hooks.
-- I know where Git stores hooks.
-- I understand why `.git/hooks` is not shared automatically.
-- I understand that local hooks can be bypassed.
+- [ ] I understand what Git hooks are.
+- [ ] I understand client-side hooks.
+- [ ] I understand server-side hooks.
+- [ ] I know where Git stores hooks.
+- [ ] I understand why `.git/hooks` is not shared automatically.
+- [ ] I understand that local hooks can be bypassed.
 
 ### Native hooks
 
-- I created a `pre-commit` hook.
-- I tested whitespace validation.
-- I created a `commit-msg` hook.
-- I enforced a Conventional Commit format.
-- I created a `pre-push` hook.
-- I tested hook failure behavior.
+- [ ] I created a `pre-commit` hook.
+- [ ] I tested whitespace validation.
+- [ ] I created a `commit-msg` hook.
+- [ ] I enforced a Conventional Commit format.
+- [ ] I created a `pre-push` hook.
+- [ ] I tested hook failure behavior.
 
 ### pre-commit
 
-- I installed the framework.
-- I created `.pre-commit-config.yaml`.
-- I configured formatting checks.
-- I configured linting checks.
-- I ran all hooks against all files.
-- I understand pinned hook revisions.
+- [ ] I installed the framework.
+- [ ] I created `.pre-commit-config.yaml`.
+- [ ] I configured formatting checks.
+- [ ] I configured linting checks.
+- [ ] I ran all hooks against all files.
+- [ ] I understand pinned hook revisions.
 
 ### Husky ecosystem
 
-- I installed Husky.
-- I configured lint-staged.
-- I configured ESLint and Prettier.
-- I configured Commitlint.
-- I tested invalid commit messages.
+- [ ] I installed Husky.
+- [ ] I configured lint-staged.
+- [ ] I configured ESLint and Prettier.
+- [ ] I configured Commitlint.
+- [ ] I tested invalid commit messages.
 
 ### GitHub workflow
 
-- I created the lesson file.
-- I created the hook policy file.
-- I committed the changes.
-- I pushed the branch.
-- I created a pull request.
-- I merged the pull request.
-- I created the annotated tag.
-- I published the GitHub Release.
+- [ ] I created the lesson file.
+- [ ] I created the hook policy file.
+- [ ] I committed the changes.
+- [ ] I pushed the branch.
+- [ ] I created a pull request.
+- [ ] I merged the pull request.
+- [ ] I created the annotated tag.
+- [ ] I published the GitHub Release.
 
 ---
 
@@ -1735,17 +1711,17 @@ docs/github/module-01-code/lesson-16-git-hooks.md
 
 Use these resources to deepen your understanding:
 
-| Resource             | Link                                                                                                                                                                                                                         |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Git Hooks            | [https://git-scm.com/docs/githooks](https://git-scm.com/docs/githooks)                                                                                                                                                       |
-| Git Configuration    | [https://git-scm.com/docs/git-config](https://git-scm.com/docs/git-config)                                                                                                                                                   |
-| pre-commit           | [https://pre-commit.com/](https://pre-commit.com/)                                                                                                                                                                           |
-| Husky                | [https://typicode.github.io/husky/](https://typicode.github.io/husky/)                                                                                                                                                       |
-| lint-staged          | [https://github.com/lint-staged/lint-staged](https://github.com/lint-staged/lint-staged)                                                                                                                                     |
-| Commitlint           | [https://commitlint.js.org/](https://commitlint.js.org/)                                                                                                                                                                     |
-| Conventional Commits | [https://www.conventionalcommits.org/](https://www.conventionalcommits.org/)                                                                                                                                                 |
-| GitHub Actions       | [https://docs.github.com/en/actions](https://docs.github.com/en/actions)                                                                                                                                                     |
-| GitHub Rulesets      | [https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets) |
+| Resource | Link |
+|---|---|
+| Git Hooks | https://git-scm.com/docs/githooks |
+| Git Configuration | https://git-scm.com/docs/git-config |
+| pre-commit | https://pre-commit.com/ |
+| Husky | https://typicode.github.io/husky/ |
+| lint-staged | https://github.com/lint-staged/lint-staged |
+| Commitlint | https://commitlint.js.org/ |
+| Conventional Commits | https://www.conventionalcommits.org/ |
+| GitHub Actions | https://docs.github.com/en/actions |
+| GitHub Rulesets | https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets |
 
 ---
 
@@ -1768,5 +1744,3 @@ Planned topics:
 - Recovery exercises using a disposable practice branch.
 
 The objective is to become comfortable recovering from mistakes without unnecessarily losing work.
-
-**Your next step:** Complete the native hooks exercises first, then the `pre-commit` and Husky exercises. Keep the two policy and lesson Markdown files in your training repository so they become part of your GitHub reference documentation.
