@@ -1,0 +1,65 @@
+
+name: Documentation Check
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "*.md"
+      - "*.json"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs-check.yml"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "*.md"
+      - "*.json"
+      - "mkdocs.yml"
+      - "requirements-docs.txt"
+      - ".github/workflows/docs-check.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Documentation
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install documentation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-docs.txt
+
+      - name: Validate Markdown
+        run: |
+          npx --yes markdownlint-cli2@0.17.2 "**/*.md"
+
+      - name: Build documentation
+        run: |
+          mkdocs build --strict
