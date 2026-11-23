@@ -107,7 +107,7 @@ We recommend following this learning process:
 The source code and training materials are maintained
 in the GitHub repository.
 
-[Visit GitHub Repository](https://github.com/YOUR_USERNAME/github-deep-dive-training)
+[Visit GitHub Repository](https://github.com/yassine-b/github-training)
 
 ---
 
