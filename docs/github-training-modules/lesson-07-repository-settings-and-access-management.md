@@ -1,5 +1,4 @@
 
-
 # Lesson 07 — Repository Settings and Access Management
 
 **Module:** 01 — Code  
@@ -47,7 +46,7 @@ They allow repository administrators to manage:
 Typical settings categories include:
 
 | Category | Purpose |
-|---|---|
+| --- | --- |
 | General | Repository information and general behaviour |
 | Access | Collaborators and access management |
 | Code and automation | Branches, rules, Actions, and automation |
@@ -170,7 +169,7 @@ Depending on the repository and account configuration, you may be able to enable
 These features serve different purposes.
 
 | Feature | Purpose |
-|---|---|
+| --- | --- |
 | Issues | Track bugs, tasks, and feature requests |
 | Projects | Plan and track work |
 | Discussions | Community conversations and questions |
@@ -217,7 +216,7 @@ This option is intended for organizations using GitHub Enterprise and is not gen
 ### Comparison
 
 | Visibility | Who can access it? | Typical use |
-|---|---|---|
+| --- | --- | --- |
 | Public | Anyone | Open-source project |
 | Private | Authorized users | Private development |
 | Internal | Members of the enterprise | Enterprise collaboration |
@@ -237,7 +236,7 @@ Review the consequences before changing visibility.
 
 Official documentation:
 
-https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility
+<https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
 
 ### Exercise
 
@@ -272,7 +271,7 @@ Each person needs an appropriate level of access.
 
 The principle to follow is:
 
-**Give people only the permissions they need to perform their responsibilities.**
+### Give people only the permissions they need to perform their responsibilities
 
 This is called the principle of least privilege.
 
@@ -303,7 +302,7 @@ Organization-owned repositories provide more granular predefined repository role
 The main roles are:
 
 | Role | Main responsibility |
-|---|---|
+| --- | --- |
 | Read | View and clone the repository |
 | Triage | Manage Issues and Pull Requests without pushing code |
 | Write | Contribute code and manage normal development work |
@@ -354,14 +353,14 @@ Admin access should be restricted because it includes sensitive administrative a
 
 Official documentation:
 
-https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization
+<https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization>
 
 ### 5.4 Example permission assignment
 
 Imagine a small software project:
 
 | Team member | Responsibility | Suggested role |
-|---|---|---|
+| --- | --- | --- |
 | Project owner | Full administration | Admin |
 | Backend developer | Backend development | Write |
 | Frontend developer | Frontend development | Write |
@@ -468,7 +467,7 @@ Do not change the default branch during this exercise. Your repository already u
 
 Official documentation:
 
-https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch
+<https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch>
 
 ---
 
@@ -581,7 +580,7 @@ Disadvantages:
 ### 7.4 Comparison
 
 | Strategy | Preserves individual commits on main? | Creates merge commit? | History |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Merge commit | Yes | Yes | Branching |
 | Squash and merge | No, combines them | No | Linear |
 | Rebase and merge | Yes | No | Linear |
@@ -590,7 +589,7 @@ Disadvantages:
 
 For `github-deep-dive-training`, I recommend:
 
-**Squash and merge**
+### Squash and merge
 
 Reasons:
 
@@ -610,7 +609,7 @@ For larger software projects, the best strategy depends on how the team wants to
 
 Official documentation:
 
-https://docs.github.com/en/pull-requests/reference/pull-request-merges
+<https://docs.github.com/en/pull-requests/reference/pull-request-merges>
 
 ### 7.6 Configure merge methods
 
@@ -793,7 +792,7 @@ This prevents the protected branch from being deleted.
 For a collaborative software project, consider:
 
 | Rule | Recommendation |
-|---|---|
+| --- | --- |
 | Require Pull Request | Enabled |
 | Required approvals | 1 or more, according to team size |
 | Dismiss stale approvals | Enabled where appropriate |
@@ -832,7 +831,7 @@ The ruleset can require Pull Requests and prevent force pushes or branch deletio
 ### 9.2 Rulesets versus classic branch protection
 
 | Feature | Branch protection rules | Rulesets |
-|---|---|---|
+| --- | --- | --- |
 | Protect branches | Yes | Yes |
 | Require Pull Requests | Yes | Yes |
 | Require approvals | Yes | Yes |
@@ -883,7 +882,7 @@ New branch ruleset
 Create a ruleset with these example values:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Ruleset name | Protect main branch |
 | Enforcement status | Active, if available and suitable |
 | Target branches | `main` |
@@ -916,9 +915,9 @@ If your private training repository does not offer the feature, inspect the avai
 
 Official documentation:
 
-https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets
+<https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 
-https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository
+<https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository>
 
 ### Exercise
 
@@ -1070,7 +1069,7 @@ GitHub provides a setting that controls the default permissions granted to the `
 
 The general principle is:
 
-**Give a workflow only the permissions it needs.**
+### Give a workflow only the permissions it needs
 
 For example, a workflow that only runs tests should not need permission to modify repository contents.
 
@@ -1156,7 +1155,7 @@ For this training exercise, inspect these options but do not execute them.
 Use this as a reference configuration.
 
 | Setting | Recommended configuration |
-|---|---|
+| --- | --- |
 | Repository visibility | Public if you intend to share the training material |
 | Default branch | `main` |
 | Issues | Enabled |
@@ -1461,7 +1460,7 @@ Prepare a changelog and publish a release only when the module milestone is genu
 
 ## 19. What comes next?
 
-**Lesson 08 — Repository Collaboration Workflow and Pull Request Management**
+### Lesson 08 — Repository Collaboration Workflow and Pull Request Management
 
 We will focus on how developers collaborate using:
 
@@ -1475,4 +1474,3 @@ We will focus on how developers collaborate using:
 - Auto-merge.
 - Code Owners.
 - Safe collaboration practices.
-

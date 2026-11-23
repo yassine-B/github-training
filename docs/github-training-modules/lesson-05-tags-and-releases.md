@@ -133,7 +133,7 @@ Example:
 ```
 
 | Component | Meaning | Example |
-|---|---|---|
+| --- | --- | --- |
 | MAJOR | Incompatible or breaking changes | 2.0.0 |
 | MINOR | Backward-compatible functionality | 1.5.0 |
 | PATCH | Backward-compatible bug fixes | 1.4.3 |
@@ -323,7 +323,7 @@ Release notes explain what changed in a particular version.
 Example:
 
 ```markdown
-# Version 1.0.0
+## Version 1.0.0
 
 ## Features
 
@@ -357,7 +357,7 @@ You can customize generated notes before publishing.
 For your future Django REST Framework and React projects, a versioning scheme could look like this:
 
 | Version | Example milestone |
-|---|---|
+| --- | --- |
 | 0.1.0 | Initial development version |
 | 0.2.0 | Authentication implemented |
 | 0.3.0 | Main business features implemented |
@@ -408,7 +408,7 @@ CHANGELOG.md
 Add:
 
 ```markdown
-# Changelog
+## Changelog
 
 All notable changes to this project are documented here.
 
@@ -505,7 +505,7 @@ Verify that the release is visible in the GitHub Releases section.
 ## 14. Important commands reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git tag` | List local tags |
 | `git tag v1.0.0` | Create lightweight tag |
 | `git tag -a v1.0.0 -m "message"` | Create annotated tag |

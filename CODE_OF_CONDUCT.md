@@ -103,7 +103,7 @@ This Code of Conduct applies to:
 This document is inspired by the
 Contributor Covenant.
 
-https://www.contributor-covenant.org/
+<https://www.contributor-covenant.org/>
 
 The project may adapt these guidelines as its
 community and contribution processes evolve.

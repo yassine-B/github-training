@@ -19,7 +19,7 @@ By the end of this lesson, you should be able to:
 
 ---
 
-# Part 1 — Understanding Git Worktrees
+## Part 1 — Understanding Git Worktrees
 
 ## 2. What is a Git Worktree?
 
@@ -114,7 +114,7 @@ A branch is a movable reference to a commit.
 A worktree is a working directory in which you check out a branch or commit.
 
 | Git branch | Git worktree |
-|---|---|
+| --- | --- |
 | Represents a line of development | Represents a working directory |
 | Contains a reference to a commit | Contains checked-out files |
 | Can exist without a worktree | Is associated with a Git repository |
@@ -190,7 +190,7 @@ However, shared repository references, concurrent operations, and shared resourc
 
 ---
 
-# Part 2 — Your first Git Worktree
+## Part 2 — Your first Git Worktree
 
 ## 6. Prepare your repository
 
@@ -231,7 +231,7 @@ worktree-practice.md
 Content:
 
 ```markdown
-# Git Worktree Practice
+## Git Worktree Practice
 
 This file is used to practice Git Worktrees.
 
@@ -273,7 +273,7 @@ git worktree add ..\github-deep-dive-hotfix -b practice/worktree-hotfix
 Explanation:
 
 | Part | Meaning |
-|---|---|
+| --- | --- |
 | `git worktree add` | Creates a new worktree |
 | `..\github-deep-dive-hotfix` | Path of the new working directory |
 | `-b` | Creates a new branch |
@@ -350,7 +350,7 @@ hotfix-notes.md
 Content:
 
 ```markdown
-# Hotfix Worktree
+## Hotfix Worktree
 
 This file belongs to the hotfix worktree.
 
@@ -385,7 +385,7 @@ Your hotfix commit is now part of the shared repository history, even though the
 
 ---
 
-# Part 3 — Essential Git Worktree commands
+## Part 3 — Essential Git Worktree commands
 
 ## 10. List worktrees
 
@@ -550,7 +550,7 @@ This is useful for worktrees that must remain available even if their directory 
 
 ---
 
-# Part 4 — Advanced worktree workflows
+## Part 4 — Advanced worktree workflows
 
 ## 17. Workflow A — Hotfix without interrupting development
 
@@ -726,7 +726,7 @@ Give each agent access only to its assigned working directory.
 Recommended isolation:
 
 | Agent | Working directory | Branch |
-|---|---|---|
+| --- | --- | --- |
 | Agent 1 | `agent-auth` | `feature/auth-improvements` |
 | Agent 2 | `agent-dashboard` | `feature/dashboard-improvements` |
 
@@ -750,7 +750,7 @@ Worktrees provide source-code isolation, not complete environment or security is
 
 ---
 
-# Part 5 — Git Worktrees vs Git Clone
+## Part 5 — Git Worktrees vs Git Clone
 
 ## 21. What is the difference?
 
@@ -759,7 +759,7 @@ A Git clone creates another repository.
 A Git worktree creates another working directory connected to an existing repository.
 
 | Feature | Git clone | Git worktree |
-|---|---|---|
+| --- | --- | --- |
 | Separate repository | Yes | No |
 | Shared Git object database | No, normally | Yes |
 | Independent repository configuration | Yes | Mostly shared |
@@ -790,7 +790,7 @@ Use a worktree when:
 
 ---
 
-# Part 6 — Important limitations and best practices
+## Part 6 — Important limitations and best practices
 
 ## 22. One branch cannot normally be checked out in multiple worktrees
 
@@ -905,7 +905,7 @@ Use worktrees when they solve a real workflow problem.
 
 ---
 
-# Part 7 — Practical exercises
+## Part 7 — Practical exercises
 
 ## Exercise A — Create two worktrees
 
@@ -956,7 +956,7 @@ worktree-one.md
 Content:
 
 ```markdown
-# Worktree One
+## Worktree One
 
 This file belongs to the first worktree.
 ```
@@ -995,7 +995,7 @@ worktree-two.md
 Content:
 
 ```markdown
-# Worktree Two
+## Worktree Two
 
 This file belongs to the second worktree.
 ```
@@ -1108,7 +1108,7 @@ Create:
 Content:
 
 ```markdown
-# Git Worktree Management Report
+## Git Worktree Management Report
 
 ## 1. Purpose
 
@@ -1151,7 +1151,7 @@ instead of another Git clone.
 
 ---
 
-# Part 8 — Commit and push the lesson
+## Part 8 — Commit and push the lesson
 
 ## 27. Create your lesson branch
 
@@ -1244,7 +1244,7 @@ Delete the remote branch after confirming the merge.
 
 ---
 
-# Part 9 — Tags and Releases
+## Part 9 — Tags and Releases
 
 ## 29. Create a lesson milestone tag
 
@@ -1308,7 +1308,7 @@ Module 1 — Lesson 15: Git Worktrees
 Suggested release description:
 
 ```markdown
-# Module 1 — Lesson 15
+## Module 1 — Lesson 15
 
 ## Topics Covered
 
@@ -1341,7 +1341,7 @@ This is a training milestone, not a production software release.
 
 ---
 
-# Part 10 — Lesson completion checklist
+## Part 10 — Lesson completion checklist
 
 ## Knowledge
 
@@ -1375,17 +1375,17 @@ This is a training milestone, not a production software release.
 
 ---
 
-# Official documentation
+## Official documentation
 
-1. Git — git-worktree: https://git-scm.com/docs/git-worktree
-2. GitHub Docs — About Git: https://docs.github.com/en/get-started/using-git/about-git
-3. Git — git-branch: https://git-scm.com/docs/git-branch
-4. Git — git-clone: https://git-scm.com/docs/git-clone
-5. GitHub Docs — Managing releases: https://docs.github.com/en/repositories/releasing-projects-on-github
+1. Git — git-worktree: <https://git-scm.com/docs/git-worktree>
+2. GitHub Docs — About Git: <https://docs.github.com/en/get-started/using-git/about-git>
+3. Git — git-branch: <https://git-scm.com/docs/git-branch>
+4. Git — git-clone: <https://git-scm.com/docs/git-clone>
+5. GitHub Docs — Managing releases: <https://docs.github.com/en/repositories/releasing-projects-on-github>
 
 ---
 
-# Expected result
+## Expected result
 
 Your repository should contain:
 
@@ -1414,9 +1414,9 @@ And a corresponding GitHub Release.
 
 Preserve your previous lessons, tags, releases, and existing repository structure.
 
-# Next lesson
+## Next lesson
 
-**Lesson 16 — Git Hooks: Automating Checks and Enforcing Repository Standards.**
+### Lesson 16 — Git Hooks: Automating Checks and Enforcing Repository Standards
 
 We will cover:
 

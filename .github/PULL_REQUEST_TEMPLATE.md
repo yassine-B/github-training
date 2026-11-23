@@ -1,6 +1,5 @@
 
-
-## Summary
+# Summary
 
 Describe what this Pull Request changes.
 
@@ -23,9 +22,9 @@ Closes #
 
 ## Changes made
 
-- 
-- 
-- 
+-
+-
+-
 
 ## Validation
 
@@ -43,4 +42,3 @@ Add screenshots or other relevant information when useful.
 ## Reviewer notes
 
 Mention anything that reviewers should pay particular attention to.
-

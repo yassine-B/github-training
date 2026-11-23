@@ -18,7 +18,7 @@ By the end of this lesson, you should be able to:
 
 ---
 
-# Part 1 — Understanding release engineering
+## Part 1 — Understanding release engineering
 
 ## 2. What is release engineering?
 
@@ -44,14 +44,14 @@ A professional release process normally includes:
 These concepts have different responsibilities:
 
 | Concept | Responsibility |
-|---|---|
+| --- | --- |
 | Commit | Records a change in repository history |
 | Pull Request | Proposes and reviews a set of changes |
 | Git tag | Marks a specific commit |
 | CHANGELOG.md | Maintains a human-readable history of changes |
 | GitHub Release | Packages a tagged version with release notes and optional assets |
 
-A GitHub Release is based on a Git tag. A tag can exist without a GitHub Release, and the tag and release can be created at different times. See the official documentation: https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+A GitHub Release is based on a Git tag. A tag can exist without a GitHub Release, and the tag and release can be created at different times. See the official documentation: <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 
 ### 2.2 Example release lifecycle
 
@@ -105,7 +105,7 @@ The important principle is that a release should represent a known, reviewed, an
 
 ---
 
-# Part 2 — Selecting the release version
+## Part 2 — Selecting the release version
 
 ## 3. Semantic Versioning in a real workflow
 
@@ -122,7 +122,7 @@ v1.4.2
 ```
 
 | Version component | Increment when |
-|---|---|
+| --- | --- |
 | MAJOR | You introduce incompatible changes |
 | MINOR | You add backward-compatible functionality |
 | PATCH | You fix bugs without introducing new functionality |
@@ -131,7 +131,7 @@ v1.4.2
 
 Suppose your application is currently at `v1.4.2`.
 
-**Example A — Bug fix**
+### Example A — Bug fix
 
 You fix an issue where the cashier report displays an incorrect total.
 
@@ -141,7 +141,7 @@ New version:
 v1.4.3
 ```
 
-**Example B — New feature**
+### Example B — New feature
 
 You add a new dashboard that displays daily sales statistics without breaking existing functionality.
 
@@ -151,7 +151,7 @@ New version:
 v1.5.0
 ```
 
-**Example C — Breaking change**
+### Example C — Breaking change
 
 You replace an API endpoint and existing clients must change their requests.
 
@@ -166,7 +166,7 @@ v2.0.0
 Conventional Commits provide useful information when deciding what kind of release is appropriate.
 
 | Commit type | Typical release impact |
-|---|---|
+| --- | --- |
 | `fix:` | PATCH |
 | `feat:` | MINOR |
 | `feat!:` | MAJOR |
@@ -201,7 +201,7 @@ because the release contains new backward-compatible functionality.
 
 ---
 
-# Part 3 — Maintaining CHANGELOG.md
+## Part 3 — Maintaining CHANGELOG.md
 
 ## 4. What is a changelog?
 
@@ -233,7 +233,7 @@ A useful convention is to organize it by version and change category.
 Use the following example as your initial content:
 
 ```markdown
-# Changelog
+## Changelog
 
 All notable changes to this project are documented in this file.
 
@@ -281,7 +281,7 @@ Versions follow Semantic Versioning.
 
 **Important:** Treat the `1.0.0` section above as an example only. Do not claim that this version was published unless you have actually created the corresponding tag and release. Adjust the version history to match your real repository.
 
-Reference: https://keepachangelog.com/en/1.1.0/
+Reference: <https://keepachangelog.com/en/1.1.0/>
 
 ## 6. Understanding changelog categories
 
@@ -412,7 +412,7 @@ This makes the changelog useful throughout the project's lifetime.
 
 ---
 
-# Part 4 — GitHub automatically generated release notes
+## Part 4 — GitHub automatically generated release notes
 
 ## 8. Why use generated release notes?
 
@@ -430,7 +430,7 @@ This is useful when a project has many contributors and Pull Requests.
 
 Official documentation:
 
-https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+<https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes>
 
 ## 9. Configure `.github/release.yml`
 
@@ -487,7 +487,7 @@ When GitHub generates release notes, it checks the labels assigned to merged Pul
 For example:
 
 | Pull Request | Labels | Generated category |
-|---|---|---|
+| --- | --- | --- |
 | Add order cancellation | `enhancement` | New Features |
 | Fix cashier calculation | `bug` | Bug Fixes |
 | Update dependencies | `dependencies` | Dependencies |
@@ -510,7 +510,7 @@ The `*` label is a catch-all category for Pull Requests that do not match earlie
 
 ---
 
-# Part 5 — Draft releases and prereleases
+## Part 5 — Draft releases and prereleases
 
 ## 10. Draft release
 
@@ -556,7 +556,7 @@ v1.5.0
 ```
 
 | Stage | Purpose |
-|---|---|
+| --- | --- |
 | Alpha | Early development testing |
 | Beta | Broader testing and feedback |
 | RC | Release candidate; intended to be close to final |
@@ -585,7 +585,7 @@ Save it as a draft first. Review the information before deciding whether to publ
 
 ---
 
-# Part 6 — Release branches and development strategies
+## Part 6 — Release branches and development strategies
 
 ## 12. What is a release branch?
 
@@ -685,7 +685,7 @@ Do not introduce release branches simply because a large project uses them.
 
 ---
 
-# Part 7 — Hotfix workflow
+## Part 7 — Hotfix workflow
 
 ## 14. What is a hotfix?
 
@@ -750,7 +750,7 @@ git log --oneline --decorate -n 20
 These commands help you understand your current state:
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git status` | Shows modified and untracked files |
 | `git branch -a` | Lists local and remote branches |
 | `git tag --list` | Lists existing tags |
@@ -848,7 +848,7 @@ Otherwise, the bug may reappear in the next release.
 
 ---
 
-# Part 8 — Connecting releases to Issues and Pull Requests
+## Part 8 — Connecting releases to Issues and Pull Requests
 
 ## 16. Connect development work to a release
 
@@ -917,7 +917,7 @@ They are related, but they are not interchangeable.
 
 ---
 
-# Part 9 — Preparing a real release
+## Part 9 — Preparing a real release
 
 ## 17. Release readiness checklist
 
@@ -1048,11 +1048,11 @@ GitHub's release page supports both manually written and automatically generated
 
 Official documentation:
 
-https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+<https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
 
 ---
 
-# Part 10 — Release automation concepts
+## Part 10 — Release automation concepts
 
 ## 21. What can be automated?
 
@@ -1145,11 +1145,11 @@ Be careful with deletion commands. They change repository release state.
 
 For the full command reference:
 
-https://cli.github.com/manual/gh_release
+<https://cli.github.com/manual/gh_release>
 
 ---
 
-# Part 11 — Practical training exercises
+## Part 11 — Practical training exercises
 
 ## Exercise A — Audit your release history
 
@@ -1246,7 +1246,7 @@ docs/github/module-01-code/release-plan-exercise.md
 Use this template:
 
 ```markdown
-# Release Plan Exercise
+## Release Plan Exercise
 
 ## Release Information
 
@@ -1316,7 +1316,7 @@ Create a short scenario describing:
 
 ---
 
-# Part 12 — Commit and push your lesson
+## Part 12 — Commit and push your lesson
 
 ## 23. Create your lesson branch
 
@@ -1408,7 +1408,7 @@ Only delete the branch after confirming that the Pull Request has been merged.
 
 ---
 
-# Part 13 — Lesson completion checklist
+## Part 13 — Lesson completion checklist
 
 ## Knowledge
 
@@ -1445,19 +1445,19 @@ Only delete the branch after confirming that the Pull Request has been merged.
 
 ---
 
-# Official references
+## Official references
 
-1. GitHub — About Releases: https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
-2. GitHub — Managing Releases: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
-3. GitHub — Automatically Generated Release Notes: https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
-4. GitHub — REST API for Releases: https://docs.github.com/en/rest/releases/releases
-5. GitHub CLI — Release Commands: https://cli.github.com/manual/gh_release
-6. Keep a Changelog: https://keepachangelog.com/en/1.1.0/
-7. Semantic Versioning: https://semver.org/
+1. GitHub — About Releases: <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
+2. GitHub — Managing Releases: <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+3. GitHub — Automatically Generated Release Notes: <https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes>
+4. GitHub — REST API for Releases: <https://docs.github.com/en/rest/releases/releases>
+5. GitHub CLI — Release Commands: <https://cli.github.com/manual/gh_release>
+6. Keep a Changelog: <https://keepachangelog.com/en/1.1.0/>
+7. Semantic Versioning: <https://semver.org/>
 
 ---
 
-# Expected result
+## Expected result
 
 At the end of this lesson, your repository should have:
 

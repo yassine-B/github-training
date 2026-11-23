@@ -51,7 +51,7 @@ Not every file in this structure belongs in Git.
 For example:
 
 | File or directory | Normally commit? | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Python source code | Yes | Application source |
 | React source code | Yes | Application source |
 | `requirements.txt` | Yes | Python dependencies |
@@ -71,7 +71,7 @@ The objective is to keep your Git repository focused on source code, configurati
 
 ---
 
-# Part 1 — Understanding Git file storage
+## Part 1 — Understanding Git file storage
 
 ## 3. How Git stores files
 
@@ -119,7 +119,7 @@ This is one reason Git LFS exists.
 
 ---
 
-# Part 2 — Git Large File Storage (Git LFS)
+## Part 2 — Git Large File Storage (Git LFS)
 
 ## 4. What is Git LFS?
 
@@ -153,7 +153,7 @@ Normal Git repository
 ### 4.1 Normal Git versus Git LFS
 
 | Normal Git | Git LFS |
-|---|---|
+| --- | --- |
 | Stores file contents in Git objects | Stores large content in LFS storage |
 | Suitable for source code | Suitable for selected large binary files |
 | Git repository contains actual file data | Git repository contains pointer files |
@@ -194,7 +194,7 @@ winget install GitHub.GitLFS
 
 Alternatively, use the official installation instructions:
 
-https://git-lfs.com/
+<https://git-lfs.com/>
 
 After installation, close and reopen your terminal.
 
@@ -380,7 +380,7 @@ Before adopting it for a team, check:
 
 Official documentation:
 
-https://docs.github.com/en/repositories/working-with-files/managing-large-files
+<https://docs.github.com/en/repositories/working-with-files/managing-large-files>
 
 Do not assume Git LFS is unlimited or free for every repository and account.
 
@@ -431,7 +431,7 @@ For future files, configure LFS before adding and committing them.
 
 ---
 
-# Part 3 — The .gitignore file
+## Part 3 — The .gitignore file
 
 ## 12. What is .gitignore?
 
@@ -483,36 +483,36 @@ For a Django + React project, create:
 Use the following example as a starting point:
 
 ```gitignore
-# ==============================
-# Environment variables / secrets
-# ==============================
+## ==============================
+## Environment variables / secrets
+## ==============================
 
 .env
 .env.*
 !.env.example
 !.env.template
 
-# ==============================
-# Python
-# ==============================
+## ==============================
+## Python
+## ==============================
 
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environments
+## Virtual environments
 venv/
 .venv/
 env/
 ENV/
 
-# Python packaging
+## Python packaging
 build/
 dist/
 *.egg-info/
 .eggs/
 
-# Test and coverage output
+## Test and coverage output
 .pytest_cache/
 .coverage
 .coverage.*
@@ -520,19 +520,19 @@ htmlcov/
 .tox/
 .nox/
 
-# Type checking and lint caches
+## Type checking and lint caches
 .mypy_cache/
 .pyright/
 .ruff_cache/
 
-# Django local files
+## Django local files
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-# ==============================
-# Node.js / React
-# ==============================
+## ==============================
+## Node.js / React
+## ==============================
 
 node_modules/
 dist/
@@ -542,34 +542,34 @@ coverage/
 .npm/
 .pnpm-store/
 
-# Vite cache
+## Vite cache
 .vite/
 
-# ==============================
-# Logs
-# ==============================
+## ==============================
+## Logs
+## ==============================
 
 *.log
 logs/
 
-# ==============================
-# Editors / IDEs
-# ==============================
+## ==============================
+## Editors / IDEs
+## ==============================
 
 .vscode/
 .idea/
 
-# ==============================
-# Operating systems
-# ==============================
+## ==============================
+## Operating systems
+## ==============================
 
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# ==============================
-# Temporary files
-# ==============================
+## ==============================
+## Temporary files
+## ==============================
 
 *.tmp
 *.temp
@@ -742,7 +742,7 @@ Treat an exposed credential as compromised.
 
 ---
 
-# Part 4 — The .gitattributes file
+## Part 4 — The .gitattributes file
 
 ## 17. What is .gitattributes?
 
@@ -760,7 +760,7 @@ It can configure:
 It is different from `.gitignore`.
 
 | File | Responsibility |
-|---|---|
+| --- | --- |
 | `.gitignore` | Determines which untracked files Git should ignore |
 | `.gitattributes` | Controls how Git handles files it tracks |
 
@@ -779,7 +779,7 @@ For example:
 Different operating systems have historically used different line-ending conventions.
 
 | Operating system | Line ending |
-|---|---|
+| --- | --- |
 | Windows | CRLF |
 | Linux | LF |
 | macOS | LF |
@@ -823,14 +823,14 @@ Create:
 For a typical cross-platform DRF + React project:
 
 ```gitattributes
-# Normalize text files to LF in the repository
+## Normalize text files to LF in the repository
 * text=auto eol=lf
 
-# Windows scripts that require CRLF
+## Windows scripts that require CRLF
 *.bat text eol=crlf
 *.cmd text eol=crlf
 
-# Binary files
+## Binary files
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -931,7 +931,7 @@ Do not change global Git settings blindly on an established project.
 
 ---
 
-# Part 5 — Combining .gitignore and .gitattributes
+## Part 5 — Combining .gitignore and .gitattributes
 
 ## 22. Example project structure
 
@@ -1026,7 +1026,7 @@ They solve related but different problems:
 
 ---
 
-# Part 6 — Git LFS and repository strategy
+## Part 6 — Git LFS and repository strategy
 
 ## 24. Decide where each file should live
 
@@ -1035,7 +1035,7 @@ Not every large file belongs in Git or Git LFS.
 Consider these examples:
 
 | File | Recommended storage |
-|---|---|
+| --- | --- |
 | Python source code | Git |
 | React source code | Git |
 | Small project logo | Git |
@@ -1080,7 +1080,7 @@ Remember that your POS application may operate offline locally, but that does no
 
 ---
 
-# Part 7 — Common problems and troubleshooting
+## Part 7 — Common problems and troubleshooting
 
 ## 25. Problem: Git still shows a file after adding it to .gitignore
 
@@ -1172,7 +1172,7 @@ If line endings are the issue, inspect `.gitattributes` and consider a separate 
 ## 30. Useful inspection commands
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git status --ignored` | Show ignored files |
 | `git check-ignore -v FILE` | Explain why a file is ignored |
 | `git ls-files` | List tracked files |
@@ -1186,7 +1186,7 @@ If line endings are the issue, inspect `.gitattributes` and consider a separate 
 
 ---
 
-# Part 8 — Practical exercises
+## Part 8 — Practical exercises
 
 ## Exercise A — Audit your training repository
 
@@ -1328,8 +1328,8 @@ If you do not have an appropriate asset, skip the upload portion. Do not create 
 git rm --cached temporary-file.txt
 ```
 
-7. Commit the change.
-8. Confirm that the local file remains but is no longer tracked.
+1. Commit the change.
+2. Confirm that the local file remains but is no longer tracked.
 
 Use a harmless test file, never a real secret.
 
@@ -1344,7 +1344,7 @@ docs/github/module-01-code/repository-file-policy.md
 Use this template:
 
 ```markdown
-# Repository File Management Policy
+## Repository File Management Policy
 
 ## Source Code
 
@@ -1389,7 +1389,7 @@ Fill it in based on the actual needs of your projects.
 
 ---
 
-# Part 9 — Commit and push the lesson
+## Part 9 — Commit and push the lesson
 
 ## 31. Create your lesson branch
 
@@ -1481,7 +1481,7 @@ Delete the remote branch only after confirming the Pull Request has been merged.
 
 ---
 
-# Part 10 — Lesson completion checklist
+## Part 10 — Lesson completion checklist
 
 ## Knowledge
 
@@ -1512,20 +1512,20 @@ Delete the remote branch only after confirming the Pull Request has been merged.
 
 ---
 
-# Official references
+## Official references
 
-1. GitHub — About Git Large File Storage: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
-2. GitHub — Installing Git LFS: https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage
-3. GitHub — Configuring Git LFS: https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage
-4. GitHub — Removing Files from Git LFS: https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage
-5. Git — gitignore documentation: https://git-scm.com/docs/gitignore
-6. Git — gitattributes documentation: https://git-scm.com/docs/gitattributes
-7. Git LFS — Official project: https://git-lfs.com/
-8. EditorConfig — Official documentation: https://editorconfig.org/
+1. GitHub — About Git Large File Storage: <https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage>
+2. GitHub — Installing Git LFS: <https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage>
+3. GitHub — Configuring Git LFS: <https://docs.github.com/en/repositories/working-with-files/managing-large-files/configuring-git-large-file-storage>
+4. GitHub — Removing Files from Git LFS: <https://docs.github.com/en/repositories/working-with-files/managing-large-files/removing-files-from-git-large-file-storage>
+5. Git — gitignore documentation: <https://git-scm.com/docs/gitignore>
+6. Git — gitattributes documentation: <https://git-scm.com/docs/gitattributes>
+7. Git LFS — Official project: <https://git-lfs.com/>
+8. EditorConfig — Official documentation: <https://editorconfig.org/>
 
 ---
 
-# Expected result
+## Expected result
 
 Your repository should have a structure similar to:
 
@@ -1560,4 +1560,4 @@ github-deep-dive-training/
 
 This is an illustrative structure. Preserve all the other files and lessons you have already created.
 
-**Next lesson: Lesson 14 — Git Submodules and Managing External Dependencies in Git.**
+### Next lesson: Lesson 14 — Git Submodules and Managing External Dependencies in Git

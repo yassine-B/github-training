@@ -1,5 +1,4 @@
 
-
 # Lesson 06 — Repository Documentation and Collaboration Standards
 
 **Module:** 01 — Code  
@@ -59,7 +58,7 @@ It should answer these questions:
 ### Recommended sections
 
 | Section | Purpose |
-|---|---|
+| --- | --- |
 | Project title | Identify the repository |
 | Description | Explain what it does |
 | Features | Summarize important capabilities |
@@ -77,7 +76,7 @@ It should answer these questions:
 Headings:
 
 ```markdown
-# Main heading
+## Main heading
 ## Section heading
 ### Subsection heading
 ```
@@ -151,7 +150,7 @@ Without an explicit license, people generally do not automatically receive permi
 ### Common open-source licenses
 
 | License | Main characteristics |
-|---|---|
+| --- | --- |
 | MIT | Permissive; allows broad reuse with license notice preservation |
 | Apache 2.0 | Permissive; includes express patent-related provisions |
 | GPL-3.0 | Copyleft; distributed derivative works must comply with its terms |
@@ -462,7 +461,7 @@ body:
 Explanation:
 
 | Property | Purpose |
-|---|---|
+| --- | --- |
 | `name` | Template name |
 | `description` | Short explanation |
 | `title` | Default Issue title |
@@ -645,7 +644,7 @@ GitHub has a Community Standards area that helps repository owners identify miss
 Typical standards include:
 
 | Standard | Related file or feature |
-|---|---|
+| --- | --- |
 | Description | Repository description |
 | README | `README.md` |
 | License | `LICENSE` |
@@ -957,4 +956,3 @@ Topics include:
 - Pull Request merge strategies.
 - Repository security settings.
 - Managing access safely.
-

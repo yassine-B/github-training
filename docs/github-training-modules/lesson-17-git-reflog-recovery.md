@@ -1,5 +1,6 @@
 # Module 1 — Code Tab
-# Lesson 17: Git Reflog and Repository Recovery
+
+## Lesson 17: Git Reflog and Repository Recovery
 
 **Filename:** `docs/github/module-01-code/lesson-17-git-reflog-recovery.md`
 
@@ -11,7 +12,7 @@
 
 ---
 
-# 1. Learning objectives
+## 1. Learning objectives
 
 By the end of this lesson, you should be able to:
 
@@ -27,7 +28,7 @@ By the end of this lesson, you should be able to:
 - Understand Git object retention and garbage collection.
 - Build safe recovery workflows.
 
-# 2. Understanding Git references
+## 2. Understanding Git references
 
 Before learning recovery, you need to understand how Git identifies commits.
 
@@ -141,7 +142,7 @@ HEAD now points to `feature`.
 
 Git records these movements in the reflog.
 
-# 3. What is Git Reflog?
+## 3. What is Git Reflog?
 
 `git reflog` records changes to local Git references.
 
@@ -174,7 +175,7 @@ d64e9f0 HEAD@{3}: checkout: moving from feature to main
 Interpretation:
 
 | Entry | Meaning |
-|---|---|
+| --- | --- |
 | HEAD@{0} | Most recent HEAD movement |
 | HEAD@{1} | Previous HEAD movement |
 | HEAD@{2} | Two movements ago |
@@ -226,7 +227,7 @@ Inspect the reflog configuration:
 git config --get gc.reflogExpire
 ```
 
-# 4. Understanding git reset
+## 4. Understanding git reset
 
 `git reset` moves the current branch reference to another commit.
 
@@ -312,12 +313,12 @@ Before using it, consider creating a backup branch or patch.
 ## 4.4 Comparison
 
 | Operation | HEAD | Staging area | Working directory |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `--soft` | Moves | Keeps changes staged | Keeps changes |
 | `--mixed` | Moves | Resets | Keeps changes unstaged |
 | `--hard` | Moves | Resets | Resets tracked files |
 
-# 5. Exercise environment: Create a disposable recovery repository
+## 5. Exercise environment: Create a disposable recovery repository
 
 Do not perform destructive recovery exercises directly on your main training branch.
 
@@ -368,7 +369,7 @@ git log --oneline
 
 You should have three commits.
 
-# 6. Recovery scenario 1 — Recover after accidental hard reset
+## 6. Recovery scenario 1 — Recover after accidental hard reset
 
 Imagine you accidentally execute:
 
@@ -425,7 +426,7 @@ git log --oneline
 
 **Professional recommendation:** Prefer creating a recovery branch first when you are unsure which commit contains the desired work.
 
-# 7. Recovery scenario 2 — Recover a deleted branch
+## 7. Recovery scenario 2 — Recover a deleted branch
 
 Imagine you created:
 
@@ -487,7 +488,7 @@ You have recovered the branch reference.
 
 Important: A deleted branch is not the same as immediately deleted commit objects. Recovery is possible while the relevant commit remains available.
 
-# 8. Recovery scenario 3 — Recover from an accidental rebase
+## 8. Recovery scenario 3 — Recover from an accidental rebase
 
 Imagine you have:
 
@@ -545,7 +546,7 @@ git reset --hard recovery/before-rebase
 
 This resets the local feature branch. Do not do this blindly if the branch has already been pushed or other developers have based work on it.
 
-# 9. Recovery scenario 4 — Detached HEAD
+## 9. Recovery scenario 4 — Detached HEAD
 
 Detached HEAD means HEAD points directly to a commit instead of pointing to a branch.
 
@@ -583,7 +584,7 @@ git log --oneline
 
 Important: Detached HEAD is not an error. It is a valid Git state.
 
-# 10. Recovery scenario 5 — Incorrect merge
+## 10. Recovery scenario 5 — Incorrect merge
 
 Imagine you merge the wrong branch:
 
@@ -641,7 +642,7 @@ The `-m 1` option selects the first parent as the mainline parent.
 
 Verify the merge's parent ordering before using this command.
 
-# 11. git reset vs git revert vs git restore
+## 11. git reset vs git revert vs git restore
 
 These commands solve different problems.
 
@@ -710,12 +711,12 @@ Be careful: restoring a file can discard local changes to that file.
 ## 11.4 Comparison
 
 | Command | Main purpose | Rewrites existing history? |
-|---|---|---|
+| --- | --- | --- |
 | `git reset` | Move branch reference | Yes, depending on use |
 | `git revert` | Create an undo commit | No |
 | `git restore` | Restore file contents | No commit history change |
 
-# 12. Understanding ORIG_HEAD
+## 12. Understanding ORIG_HEAD
 
 Git sometimes stores the previous position of HEAD in `ORIG_HEAD`.
 
@@ -742,14 +743,14 @@ Only do this after checking that ORIG_HEAD represents the state you want.
 
 It is not a permanent backup. Later Git operations may replace its value.
 
-# 13. Git object storage and garbage collection
+## 13. Git object storage and garbage collection
 
 Git stores repository content as objects.
 
 Important object types:
 
 | Object | Purpose |
-|---|---|
+| --- | --- |
 | Blob | File content |
 | Tree | Directory structure |
 | Commit | Snapshot metadata and parent relationships |
@@ -789,7 +790,7 @@ can remove unreachable objects immediately.
 
 Avoid this during recovery exercises.
 
-# 14. Useful recovery commands
+## 14. Useful recovery commands
 
 ```bash
 git reflog
@@ -812,7 +813,7 @@ git fsck --full --no-reflogs --unreachable
 
 Do not immediately reset or delete anything you discover. Inspect candidate commits first.
 
-# 15. Recovery best practices
+## 15. Recovery best practices
 
 Before a potentially destructive operation:
 
@@ -849,7 +850,7 @@ git diff --cached > staged-changes.patch
 
 Remember that ordinary `git diff` does not capture untracked files.
 
-# 16. Practical exercises
+## 16. Practical exercises
 
 Complete these exercises in your disposable `git-recovery-lab` repository.
 
@@ -931,7 +932,7 @@ Your task:
 
 Expected result: Produce a short incident report explaining how the branch was recovered.
 
-# 17. GitHub repository practice
+## 17. GitHub repository practice
 
 Return to your training repository.
 
@@ -972,7 +973,7 @@ The recovery runbook should contain:
 ## Suggested recovery runbook template
 
 ```markdown
-# Git Recovery Runbook
+## Git Recovery Runbook
 
 ## Incident
 
@@ -1007,7 +1008,7 @@ Document the final state.
 What should the developer do differently next time?
 ```
 
-# 18. Commit and push
+## 18. Commit and push
 
 Check:
 
@@ -1037,7 +1038,7 @@ git push -u origin docs/add-git-reflog-lesson
 
 Create a pull request:
 
-**Title:**
+### Title
 
 ```text
 docs(github): add git reflog and repository recovery lesson
@@ -1054,13 +1055,13 @@ git push origin module-01-lesson-17
 
 Check first that the tag does not already exist.
 
-# 19. GitHub Release
+## 19. GitHub Release
 
 Create a release using:
 
 **Tag:** `module-01-lesson-17`
 
-**Release title:**
+### Release title
 
 ```text
 Module 1 — Lesson 17: Git Reflog and Repository Recovery
@@ -1069,7 +1070,7 @@ Module 1 — Lesson 17: Git Reflog and Repository Recovery
 Suggested release notes:
 
 ```markdown
-# Module 1 — Lesson 17
+## Module 1 — Lesson 17
 
 ## Topics
 
@@ -1101,7 +1102,7 @@ Suggested release notes:
 - recovery-runbook.md
 ```
 
-# 20. Completion checklist
+## 20. Completion checklist
 
 - [ ] Understand HEAD and Git references.
 - [ ] Understand branch references.
@@ -1121,22 +1122,22 @@ Suggested release notes:
 - [ ] Create the annotated tag.
 - [ ] Publish the GitHub Release.
 
-# 21. Official documentation
+## 21. Official documentation
 
-- Git Reflog: https://git-scm.com/docs/git-reflog
-- Git Reset: https://git-scm.com/docs/git-reset
-- Git Revert: https://git-scm.com/docs/git-revert
-- Git Restore: https://git-scm.com/docs/git-restore
-- Git Branch: https://git-scm.com/docs/git-branch
-- Git Fsck: https://git-scm.com/docs/git-fsck
-- Git Garbage Collection: https://git-scm.com/docs/git-gc
-- Git Checkout: https://git-scm.com/docs/git-checkout
+- Git Reflog: <https://git-scm.com/docs/git-reflog>
+- Git Reset: <https://git-scm.com/docs/git-reset>
+- Git Revert: <https://git-scm.com/docs/git-revert>
+- Git Restore: <https://git-scm.com/docs/git-restore>
+- Git Branch: <https://git-scm.com/docs/git-branch>
+- Git Fsck: <https://git-scm.com/docs/git-fsck>
+- Git Garbage Collection: <https://git-scm.com/docs/git-gc>
+- Git Checkout: <https://git-scm.com/docs/git-checkout>
 
 ---
 
-# 22. Next lesson
+## 22. Next lesson
 
-**Module 1 — Lesson 18: Git Internals — Objects, Trees, Blobs, Commits and Packfiles**
+### Module 1 — Lesson 18: Git Internals — Objects, Trees, Blobs, Commits and Packfiles
 
 Planned topics:
 

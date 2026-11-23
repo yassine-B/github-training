@@ -13,7 +13,7 @@
 ## 1. Search Categories
 
 | Category | Purpose |
-|---|---|
+| --- | --- |
 | Code | Search source code and files |
 | Repositories | Find repositories |
 | Commits | Search commit history |
@@ -155,7 +155,7 @@ django in:readme stars:>100
 Useful qualifiers:
 
 | Qualifier | Purpose |
-|---|---|
+| --- | --- |
 | stars:>100 | Minimum star count |
 | forks:>10 | Minimum fork count |
 | language:python | Language |
@@ -277,7 +277,7 @@ Deliverable:
 ## 10. Important Distinctions
 
 | Feature | GitHub Code Search | VS Code |
-|---|---|---|
+| --- | --- | --- |
 | Search remote repositories | Yes | No, unless using extensions |
 | Search local files | No | Yes |
 | Search indexed definitions | Yes | Yes |
@@ -287,10 +287,10 @@ Deliverable:
 
 ## 11. Official Documentation
 
-- https://docs.github.com/en/search-github/github-code-search/using-github-code-search
-- https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax
-- https://docs.github.com/en/search-github/searching-on-github
-- https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
+- <https://docs.github.com/en/search-github/github-code-search/using-github-code-search>
+- <https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax>
+- <https://docs.github.com/en/search-github/searching-on-github>
+- <https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories>
 
 ## Completion Checklist
 

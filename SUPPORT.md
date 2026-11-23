@@ -7,7 +7,7 @@ Thank you for using GitHub Deep Dive Training.
 
 Visit our documentation website:
 
-https://yassine-B.github.io/github-training/
+<https://yassine-B.github.io/github-training/>
 
 ## Questions
 

@@ -38,7 +38,7 @@ When investigating unfamiliar code:
 ## 3. GitHub Blame versus Git history
 
 | Tool | Main purpose |
-|---|---|
+| --- | --- |
 | GitHub Blame | Shows which commit last changed each line |
 | `git blame` | Inspects line-level modification history |
 | `git log -- path` | Shows commits affecting a file |
@@ -151,10 +151,10 @@ Formatting commits can cause blame to attribute many lines to a mechanical forma
 A repository can maintain `.git-blame-ignore-revs`:
 
 ```text
-# Repository-wide formatting
+## Repository-wide formatting
 <full-formatting-commit-sha>
 
-# Line-ending conversion
+## Line-ending conversion
 <full-line-ending-commit-sha>
 ```
 
@@ -465,7 +465,7 @@ Requirements:
 Create a report:
 
 ```markdown
-# Code Investigation Report
+## Code Investigation Report
 
 ## 1. Target
 - Repository:

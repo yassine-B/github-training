@@ -1,5 +1,6 @@
 # Module 1 — Code Tab
-# Lesson 19: Advanced Git Configuration, Aliases, Attributes and Ignore Rules
+
+## Lesson 19: Advanced Git Configuration, Aliases, Attributes and Ignore Rules
 
 **Filename:** `docs/github/module-01-code/lesson-19-git-configuration.md`
 
@@ -11,7 +12,7 @@
 
 ---
 
-# 1. Learning objectives
+## 1. Learning objectives
 
 By the end of this lesson, you should be able to:
 
@@ -31,7 +32,7 @@ By the end of this lesson, you should be able to:
 - Configure reusable Git settings for teams.
 - Build a professional Git configuration standard.
 
-# 2. Understanding Git configuration
+## 2. Understanding Git configuration
 
 Git is highly configurable.
 
@@ -54,7 +55,7 @@ Git configuration is stored in configuration files.
 The main configuration scopes are:
 
 | Scope | Location | Applies to |
-|---|---|---|
+| --- | --- | --- |
 | System | System Git configuration file | All users and repositories on the system |
 | Global | User's Git configuration file | All repositories belonging to the user |
 | Local | Repository `.git/config` | One repository |
@@ -62,7 +63,7 @@ The main configuration scopes are:
 
 There is also command-level configuration using `git -c`, which applies to an individual Git command.
 
-# 3. Inspect Git configuration
+## 3. Inspect Git configuration
 
 ## 3.1 View all configuration
 
@@ -136,7 +137,7 @@ Inspect all values for a multivalued setting:
 git config --get-all core.excludesfile
 ```
 
-# 4. Configuration precedence
+## 4. Configuration precedence
 
 Git can read multiple configuration sources.
 
@@ -214,7 +215,7 @@ git -c user.name="Temporary Developer" config user.name
 
 Explain which value is used in each situation.
 
-# 5. Configure your Git identity
+## 5. Configure your Git identity
 
 ## 5.1 Global identity
 
@@ -260,7 +261,7 @@ git branch -m master main
 
 If the branch is already published, coordinate the remote rename and update the repository's default branch on GitHub.
 
-# 6. Configure Git aliases
+## 6. Configure Git aliases
 
 Aliases allow you to create shortcuts for frequently used commands.
 
@@ -359,7 +360,7 @@ git config --global alias.clean-branches "!git branch --merged"
 
 This lists branches already merged into the current branch. Inspect the output before deleting any branch.
 
-# 7. Manage configuration files
+## 7. Manage configuration files
 
 ## 7.1 Global configuration file
 
@@ -436,7 +437,7 @@ Git manages many entries automatically.
 
 Do not manually change remote or branch configuration unless you understand the effect.
 
-# 8. Conditional configuration
+## 8. Conditional configuration
 
 Conditional includes allow Git to load different settings depending on the repository location.
 
@@ -484,7 +485,7 @@ Important:
 - Test the configuration using `git config --show-origin --get user.email`.
 - Do not assume the configuration will automatically change the identity of existing commits.
 
-# 9. Understanding .gitignore
+## 9. Understanding .gitignore
 
 `.gitignore` tells Git which untracked files and directories to ignore.
 
@@ -510,12 +511,12 @@ At the root of your repository:
 Example:
 
 ```gitignore
-# Environment variables
+## Environment variables
 .env
 .env.*
 !.env.example
 
-# Python
+## Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -525,39 +526,39 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Virtual environments
+## Virtual environments
 .venv/
 venv/
 env/
 
-# Django
+## Django
 staticfiles/
 media/
 *.sqlite3
 
-# Node
+## Node
 node_modules/
 dist/
 build/
 coverage/
 
-# React / Vite
+## React / Vite
 .vite/
 
-# Logs
+## Logs
 *.log
 logs/
 
-# IDE
+## IDE
 .idea/
 .vscode/
 
-# Operating systems
+## Operating systems
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# Temporary files
+## Temporary files
 *.tmp
 *.temp
 ```
@@ -567,7 +568,7 @@ This is a starting example. Your actual ignore rules should match the project's 
 ## 9.2 Understand ignore patterns
 
 | Pattern | Meaning |
-|---|---|
+| --- | --- |
 | `*.log` | Ignore files ending in `.log` |
 | `/dist/` | Ignore root-level `dist` |
 | `dist/` | Ignore directories named `dist` at any level |
@@ -635,7 +636,7 @@ The local file remains on disk.
 
 **Security warning:** If an actual secret has already been pushed, removing the file from Git tracking is not sufficient. Rotate the exposed credential and assess whether history cleanup is necessary.
 
-# 10. Global Git ignore rules
+## 10. Global Git ignore rules
 
 Sometimes you want to ignore files across all repositories.
 
@@ -678,14 +679,14 @@ git config --show-origin --get core.excludesfile
 Difference:
 
 | File | Scope |
-|---|---|
+| --- | --- |
 | `.gitignore` | Shared repository rules |
 | `.git/info/exclude` | Local repository-specific rules |
 | Global excludes file | Personal rules across repositories |
 
 Global ignore rules should not hide files that the entire team needs to manage.
 
-# 11. Understanding .gitattributes
+## 11. Understanding .gitattributes
 
 `.gitattributes` defines attributes for files and paths.
 
@@ -741,7 +742,7 @@ This makes the expected line-ending convention explicit.
 Two common line-ending formats:
 
 | Format | Description |
-|---|---|
+| --- | --- |
 | LF | Line Feed, commonly used on Linux/macOS |
 | CRLF | Carriage Return + Line Feed, commonly used on Windows |
 
@@ -774,7 +775,7 @@ This operation may produce changes across many files.
 
 Do not blindly commit a large normalization diff.
 
-# 12. Mark binary files
+## 12. Mark binary files
 
 Binary files should generally not undergo text line-ending normalization.
 
@@ -799,7 +800,7 @@ The `binary` macro is equivalent to disabling text conversion and text diff trea
 
 This helps Git avoid treating binary data as ordinary text.
 
-# 13. Configure diff behavior
+## 13. Configure diff behavior
 
 You can control how Git handles diffs for particular file types.
 
@@ -832,7 +833,7 @@ Inspect all attributes for a file:
 git check-attr --all -- README.md
 ```
 
-# 14. Configure merge behavior
+## 14. Configure merge behavior
 
 Git supports different merge strategies and attributes.
 
@@ -867,7 +868,7 @@ git config merge.mydriver.driver "custom-merge-command %O %A %B %L %P"
 Placeholders include:
 
 | Placeholder | Meaning |
-|---|---|
+| --- | --- |
 | `%O` | Common ancestor version |
 | `%A` | Current version and merge result destination |
 | `%B` | Other branch version |
@@ -878,7 +879,7 @@ The example command above is illustrative, not an executable driver. A real driv
 
 Custom merge drivers are useful for specialized formats, but should be introduced only when the team can maintain and test them.
 
-# 15. Other useful Git attributes
+## 15. Other useful Git attributes
 
 ## 15.1 export-ignore
 
@@ -925,7 +926,7 @@ This can help GitHub distinguish generated files from manually maintained source
 
 These are GitHub-specific extensions, not general Git behavior.
 
-# 16. Configure line endings with core.autocrlf
+## 16. Configure line endings with core.autocrlf
 
 Git has a configuration setting:
 
@@ -936,7 +937,7 @@ git config --global core.autocrlf
 Common values:
 
 | Value | Behavior |
-|---|---|
+| --- | --- |
 | `true` | Convert LF to CRLF when checking out on supported platforms; normalize text to LF when committing |
 | `input` | Normalize CRLF to LF when committing; do not convert LF to CRLF on checkout |
 | `false` | Disable automatic conversion |
@@ -953,7 +954,7 @@ This is a possible configuration, not a universal requirement.
 
 Your repository's `.gitattributes` should define the team's expected line-ending behavior.
 
-# 17. Git configuration for DRF + React projects
+## 17. Git configuration for DRF + React projects
 
 Let's create a practical configuration standard for a project with:
 
@@ -986,12 +987,12 @@ project/
 ## 17.2 Example .gitignore
 
 ```gitignore
-# Environment files
+## Environment files
 .env
 .env.*
 !.env.example
 
-# Python
+## Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -1000,39 +1001,39 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Virtual environments
+## Virtual environments
 .venv/
 venv/
 
-# Django
+## Django
 staticfiles/
 media/
 *.sqlite3
 
-# Node
+## Node
 node_modules/
 dist/
 build/
 .vite/
 coverage/
 
-# Docker / temporary data
+## Docker / temporary data
 *.pid
 
-# Logs
+## Logs
 *.log
 logs/
 
-# IDE
+## IDE
 .idea/
 .vscode/
 
-# OS
+## OS
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# Temporary files
+## Temporary files
 *.tmp
 *.temp
 ```
@@ -1042,15 +1043,15 @@ Important: Do not ignore files such as `docker-compose.yml`, `Dockerfile`, depen
 ## 17.3 Example .gitattributes
 
 ```gitattributes
-# Automatic text detection
+## Automatic text detection
 * text=auto
 
-# Backend
+## Backend
 *.py text eol=lf
 *.toml text eol=lf
 *.ini text eol=lf
 
-# Frontend
+## Frontend
 *.js text eol=lf
 *.jsx text eol=lf
 *.ts text eol=lf
@@ -1059,20 +1060,20 @@ Important: Do not ignore files such as `docker-compose.yml`, `Dockerfile`, depen
 *.html text eol=lf
 *.json text eol=lf
 
-# Configuration
+## Configuration
 *.yml text eol=lf
 *.yaml text eol=lf
 *.sh text eol=lf
 *.env.example text eol=lf
 
-# Documentation
+## Documentation
 *.md text eol=lf
 
-# Windows scripts
+## Windows scripts
 *.bat text eol=crlf
 *.cmd text eol=crlf
 
-# Binary files
+## Binary files
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -1122,7 +1123,7 @@ This helps developers use consistent formatting across editors.
 
 ---
 
-# Part 18 — Advanced Git configuration features
+## Part 18 — Advanced Git configuration features
 
 ## 18. Conditional includes and worktrees
 
@@ -1175,7 +1176,7 @@ git config --global pull.ff only
 These represent different collaboration policies.
 
 | Setting | Behavior |
-|---|---|
+| --- | --- |
 | `pull.rebase=true` | Rebase local commits on top of fetched upstream commits |
 | `pull.rebase=false` | Merge fetched changes |
 | `pull.ff=only` | Allow pull only when it can fast-forward |
@@ -1244,7 +1245,7 @@ Commit signing is covered more extensively in a dedicated security lesson.
 
 ---
 
-# Part 19 — Diagnose configuration problems
+## Part 19 — Diagnose configuration problems
 
 ## 19. Common problems and solutions
 
@@ -1336,7 +1337,7 @@ Check:
 
 ---
 
-# Part 20 — Practical exercises
+## Part 20 — Practical exercises
 
 ## Exercise 1: Configuration scopes
 
@@ -1498,7 +1499,7 @@ Create a team standards document.
 
 ---
 
-# Part 21 — Add the lesson to your GitHub training repository
+## Part 21 — Add the lesson to your GitHub training repository
 
 ## 21. Create the lesson branch
 
@@ -1534,7 +1535,7 @@ Paste this complete lesson.
 Use this template:
 
 ```markdown
-# Team Git Configuration Standards
+## Team Git Configuration Standards
 
 ## 1. Identity
 
@@ -1605,7 +1606,7 @@ Include:
 
 ---
 
-# Part 22 — Commit and push
+## Part 22 — Commit and push
 
 ## 22. Review your changes
 
@@ -1644,13 +1645,13 @@ git push -u origin docs/add-git-configuration-lesson
 
 ## 22.1 Pull request
 
-**Title:**
+### Title
 
 ```text
 docs(github): add lesson 19 — advanced git configuration
 ```
 
-**Description:**
+### Description
 
 ```markdown
 ## Summary
@@ -1700,7 +1701,7 @@ Review and merge the PR.
 
 ---
 
-# Part 23 — Tag and GitHub Release
+## Part 23 — Tag and GitHub Release
 
 ## 23. Create an annotated tag
 
@@ -1741,22 +1742,22 @@ Go to:
 
 `github-deep-dive-training → Releases → Draft a new release`
 
-**Tag:**
+### Tag
 
 ```text
 module-01-lesson-19
 ```
 
-**Release title:**
+### Release title
 
 ```text
 Module 1 — Lesson 19: Advanced Git Configuration
 ```
 
-**Release description:**
+### Release description
 
 ```markdown
-# Module 1 — Lesson 19
+## Module 1 — Lesson 19
 
 ## Topics
 
@@ -1796,7 +1797,7 @@ Publish the release.
 
 ---
 
-# Part 24 — Completion checklist
+## Part 24 — Completion checklist
 
 - [ ] Understand Git configuration scopes.
 - [ ] Understand configuration precedence.
@@ -1824,22 +1825,22 @@ Publish the release.
 
 ---
 
-# Official documentation
+## Official documentation
 
-1. Git Configuration: https://git-scm.com/docs/git-config
-2. Git Ignore: https://git-scm.com/docs/gitignore
-3. Git Attributes: https://git-scm.com/docs/gitattributes
-4. Git Check Ignore: https://git-scm.com/docs/git-check-ignore
-5. Git Check Attr: https://git-scm.com/docs/git-check-attr
-6. Git Aliases: https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
-7. Git Worktrees: https://git-scm.com/docs/git-worktree
-8. GitHub Ignoring Files: https://docs.github.com/en/get-started/git-basics/ignoring-files
+1. Git Configuration: <https://git-scm.com/docs/git-config>
+2. Git Ignore: <https://git-scm.com/docs/gitignore>
+3. Git Attributes: <https://git-scm.com/docs/gitattributes>
+4. Git Check Ignore: <https://git-scm.com/docs/git-check-ignore>
+5. Git Check Attr: <https://git-scm.com/docs/git-check-attr>
+6. Git Aliases: <https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases>
+7. Git Worktrees: <https://git-scm.com/docs/git-worktree>
+8. GitHub Ignoring Files: <https://docs.github.com/en/get-started/git-basics/ignoring-files>
 
 ---
 
-# Next lesson
+## Next lesson
 
-**Module 1 — Lesson 20: Advanced Git Workflows — Cherry-pick, Rebase, Interactive Rebase, Squash and Bisect**
+### Module 1 — Lesson 20: Advanced Git Workflows — Cherry-pick, Rebase, Interactive Rebase, Squash and Bisect
 
 Planned topics:
 

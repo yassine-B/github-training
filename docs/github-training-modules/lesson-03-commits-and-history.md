@@ -179,7 +179,7 @@ chore(deps): update dependencies
 ### Common commit types
 
 | Type | Purpose |
-|---|---|
+| --- | --- |
 | `feat` | Introduces a feature |
 | `fix` | Fixes a bug |
 | `docs` | Documentation changes |
@@ -391,7 +391,7 @@ Moves the branch back one commit and discards changes in the index and working d
 ### Reset vs revert
 
 | Command | Behavior | Typical use |
-|---|---|---|
+| --- | --- | --- |
 | `git reset --soft` | Moves branch; keeps changes staged | Redo latest commit |
 | `git reset --mixed` | Moves branch; keeps changes unstaged | Reorganize local changes |
 | `git reset --hard` | Moves branch and discards affected working changes | Carefully discard local work |

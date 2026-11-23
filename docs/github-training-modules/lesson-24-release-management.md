@@ -1,6 +1,6 @@
 # Module 1 — Code
 
-# Lesson 24: GitHub Releases, Tags, and Version History — Advanced Repository Release Management
+## Lesson 24: GitHub Releases, Tags, and Version History — Advanced Repository Release Management
 
 **Level:** Advanced
 **Type:** Practical lesson
@@ -36,7 +36,7 @@ Git tags identify repository versions. GitHub Releases package release informati
 Example:
 
 | Git tag | GitHub Release |
-|---|---|
+| --- | --- |
 | v1.0.0 | Application 1.0.0 |
 | v1.1.0 | Application 1.1.0 |
 | v1.1.1 | Application 1.1.1 |
@@ -136,7 +136,7 @@ Example:
 ### Version examples
 
 | Change | Current | Next |
-|---|---|---|
+| --- | --- | --- |
 | Bug fix | 1.0.0 | 1.0.1 |
 | Compatible feature | 1.0.1 | 1.1.0 |
 | Breaking API change | 1.1.0 | 2.0.0 |
@@ -166,7 +166,7 @@ Build metadata does not affect version precedence.
 
 Official specification:
 
-https://semver.org/spec/v2.0.0.html
+<https://semver.org/spec/v2.0.0.html>
 
 ## 5. Versioning strategies
 
@@ -282,7 +282,7 @@ CHANGELOG.md
 Recommended structure:
 
 ```markdown
-# Changelog
+## Changelog
 
 All notable changes are documented here.
 
@@ -318,7 +318,7 @@ All notable changes are documented here.
 ### Changelog categories
 
 | Category | Meaning |
-|---|---|
+| --- | --- |
 | Added | New functionality |
 | Changed | Changes to existing functionality |
 | Deprecated | Planned removal |
@@ -408,7 +408,7 @@ Release assets are downloadable files attached to GitHub Releases.
 Examples:
 
 | Asset | Purpose |
-|---|---|
+| --- | --- |
 | `.exe` | Windows executable |
 | `.msi` | Windows installer |
 | `.zip` | Application package |
@@ -504,7 +504,7 @@ Deleting a GitHub Release and deleting its Git tag are separate operations.
 
 Official reference:
 
-https://cli.github.com/manual/gh_release
+<https://cli.github.com/manual/gh_release>
 
 ## 11. Comparing releases
 
@@ -828,22 +828,22 @@ Include a version history table, branch diagram, sample changelog, and step-by-s
 ## 17. References
 
 - GitHub Docs — Releasing projects:
-  https://docs.github.com/en/repositories/releasing-projects-on-github
+  <https://docs.github.com/en/repositories/releasing-projects-on-github>
 
 - GitHub Docs — About releases:
-  https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+  <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 
 - GitHub Docs — Managing releases:
-  https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+  <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
 
 - Git documentation — git-tag:
-  https://git-scm.com/docs/git-tag
+  <https://git-scm.com/docs/git-tag>
 
 - Semantic Versioning:
-  https://semver.org/spec/v2.0.0.html
+  <https://semver.org/spec/v2.0.0.html>
 
 - GitHub CLI — Releases:
-  https://cli.github.com/manual/gh_release
+  <https://cli.github.com/manual/gh_release>
 
 ---
 

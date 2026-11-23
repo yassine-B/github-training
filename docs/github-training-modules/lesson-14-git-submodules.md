@@ -17,7 +17,7 @@ By the end of this lesson, you should be able to:
 
 ---
 
-# Part 1 — Understanding Git submodules
+## Part 1 — Understanding Git submodules
 
 ## 2. What is a Git submodule?
 
@@ -157,7 +157,7 @@ It stores a reference to a specific commit.
 
 ---
 
-# Part 2 — Adding your first submodule
+## Part 2 — Adding your first submodule
 
 ## 5. Prepare your training repository
 
@@ -286,7 +286,7 @@ Pay attention to the fact that the submodule appears as a repository reference r
 
 ---
 
-# Part 3 — Cloning repositories containing submodules
+## Part 3 — Cloning repositories containing submodules
 
 ## 8. The normal cloning problem
 
@@ -347,7 +347,7 @@ git submodule update --init --recursive
 ### Difference between the commands
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git submodule init` | Initializes submodule configuration |
 | `git submodule update` | Checks out the recorded submodule commit |
 | `git submodule update --init` | Initializes and updates |
@@ -356,7 +356,7 @@ git submodule update --init --recursive
 
 ---
 
-# Part 4 — Updating submodules
+## Part 4 — Updating submodules
 
 ## 11. Understanding pinned commits
 
@@ -448,7 +448,7 @@ git commit -m "chore(git): configure submodule tracking branch"
 
 ---
 
-# Part 5 — Working inside a submodule
+## Part 5 — Working inside a submodule
 
 ## 14. A submodule is an independent repository
 
@@ -508,13 +508,13 @@ The parent may report that the submodule contains modified content.
 
 There are two different situations:
 
-**Situation A — Modified content**
+### Situation A — Modified content
 
 You changed a file inside the submodule but did not commit it.
 
 The submodule has uncommitted changes.
 
-**Situation B — New submodule commit**
+### Situation B — New submodule commit
 
 You committed a change inside the submodule.
 
@@ -587,7 +587,7 @@ This workflow keeps the dependency's changes and the application's dependency up
 
 ---
 
-# Part 6 — Removing a submodule
+## Part 6 — Removing a submodule
 
 ## 17. Why removal requires care
 
@@ -670,14 +670,14 @@ Do not manually delete Git internals without first confirming that the submodule
 
 ---
 
-# Part 7 — Submodules versus other dependency-management approaches
+## Part 7 — Submodules versus other dependency-management approaches
 
 ## 19. Git submodules vs Git subtree
 
 Both allow you to incorporate another Git repository into your project, but they work differently.
 
 | Feature | Submodule | Subtree |
-|---|---|---|
+| --- | --- | --- |
 | Independent repository | Yes | Yes |
 | Separate Git history | Maintained independently | Can be imported into parent history |
 | Parent tracks dependency commit | Yes | Not through a gitlink |
@@ -697,7 +697,7 @@ For software development, package managers are frequently a better choice for re
 Examples:
 
 | Ecosystem | Package manager |
-|---|---|
+| --- | --- |
 | Python | pip / uv |
 | JavaScript | npm / pnpm / yarn |
 | PHP | Composer |
@@ -728,7 +728,7 @@ Use submodules when you specifically need to include another Git repository as p
 These features solve completely different problems.
 
 | Git LFS | Git submodules |
-|---|---|
+| --- | --- |
 | Manages large files | Includes external Git repositories |
 | Stores large content in LFS storage | References another repository |
 | Uses pointer files | Uses gitlinks |
@@ -738,7 +738,7 @@ Do not confuse the two.
 
 ---
 
-# Part 8 — Practical exercises
+## Part 8 — Practical exercises
 
 ## 22. Exercise A — Add a submodule
 
@@ -879,7 +879,7 @@ Alternatively, keep it as a permanent example in your training repository.
 
 ---
 
-# Part 9 — Recommended repository documentation
+## Part 9 — Recommended repository documentation
 
 ## 28. Create a submodule management policy
 
@@ -890,7 +890,7 @@ Create:
 Use the following content:
 
 ```markdown
-# Git Submodule Management Policy
+## Git Submodule Management Policy
 
 ## 1. Purpose
 
@@ -956,7 +956,7 @@ This policy is an example. Adapt it to the needs of your future company.
 
 ---
 
-# Part 10 — Commit and push the lesson
+## Part 10 — Commit and push the lesson
 
 ## 29. Create the lesson file
 
@@ -1033,7 +1033,7 @@ Delete the remote branch after confirming the merge.
 
 ---
 
-# Part 11 — Lesson completion checklist
+## Part 11 — Lesson completion checklist
 
 ## Knowledge
 
@@ -1065,17 +1065,17 @@ Delete the remote branch after confirming the merge.
 
 ---
 
-# Official documentation
+## Official documentation
 
-1. GitHub — Working with submodules: https://docs.github.com/en/repositories/working-with-files/managing-files/working-with-submodules
-2. Git — git-submodule: https://git-scm.com/docs/git-submodule
-3. Git — gitmodules: https://git-scm.com/docs/gitmodules
-4. Git — git subtree: https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt
-5. GitHub — Managing remote repositories: https://docs.github.com/en/get-started/git-basics/managing-remote-repositories
+1. GitHub — Working with submodules: <https://docs.github.com/en/repositories/working-with-files/managing-files/working-with-submodules>
+2. Git — git-submodule: <https://git-scm.com/docs/git-submodule>
+3. Git — gitmodules: <https://git-scm.com/docs/gitmodules>
+4. Git — git subtree: <https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt>
+5. GitHub — Managing remote repositories: <https://docs.github.com/en/get-started/git-basics/managing-remote-repositories>
 
 ---
 
-# Expected result
+## Expected result
 
 Your repository should now contain:
 
@@ -1097,6 +1097,6 @@ Preserve your existing lessons and repository files.
 
 ## Next lesson
 
-**Lesson 15 — Git Worktrees: Managing Multiple Branches and Working Directories Simultaneously.**
+### Lesson 15 — Git Worktrees: Managing Multiple Branches and Working Directories Simultaneously
 
 You will learn how to work on multiple branches at the same time without repeatedly switching branches in a single working directory.

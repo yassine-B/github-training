@@ -134,7 +134,7 @@ Use descriptive names that communicate the purpose of the branch.
 Recommended prefixes:
 
 | Prefix | Purpose | Example |
-|---|---|---|
+| --- | --- | --- |
 | `feature/` | New functionality | `feature/user-authentication` |
 | `fix/` | Bug fixes | `fix/login-validation` |
 | `docs/` | Documentation | `docs/api-guide` |
@@ -312,7 +312,7 @@ You can now create a pull request on GitHub.
 ## 13. Important commands reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git branch` | List local branches |
 | `git branch -r` | List remote-tracking branches |
 | `git branch -a` | List all branches |

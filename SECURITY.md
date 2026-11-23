@@ -1,5 +1,4 @@
 
-
 # Security Policy
 
 ## Supported versions
@@ -9,7 +8,7 @@ This repository is primarily educational documentation.
 Security-related corrections should be reported for the current version of the repository's content.
 
 | Version | Supported |
-|---|---|
+| --- | --- |
 | Latest release | Yes |
 | Older releases | No guarantee |
 
@@ -53,4 +52,3 @@ This is a community training repository, so response times are not guaranteed.
 ## Scope clarification
 
 If a lesson contains an incorrect security recommendation, report it as a documentation issue unless it exposes a genuine vulnerability. Use the appropriate reporting method.
-

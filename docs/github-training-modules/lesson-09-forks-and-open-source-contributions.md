@@ -46,7 +46,7 @@ When you want to contribute your changes to the original repository, you create 
 These concepts are related, but they are not the same.
 
 | Concept | Meaning | Where it exists |
-|---|---|---|
+| --- | --- | --- |
 | Fork | A GitHub-hosted copy of another repository | GitHub |
 | Clone | A local copy of a Git repository | Your computer |
 | Branch | An independent line of development | Local Git and/or remote |
@@ -73,7 +73,7 @@ There are two important repositories in this workflow:
 Example:
 
 | Remote | Repository | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `origin` | `YOUR_USERNAME/Spoon-Knife` | Your fork; where you push changes |
 | `upstream` | `octocat/Spoon-Knife` | Original repository; where you get updates |
 
@@ -223,37 +223,37 @@ You generally use `upstream` to retrieve changes from the original repository. Y
 
 ### 6.1 Understand the remote commands
 
-**List remotes:**
+### List remotes
 
 ```bash
 git remote
 ```
 
-**Show remote URLs:**
+### Show remote URLs
 
 ```bash
 git remote -v
 ```
 
-**Add a remote:**
+### Add a remote
 
 ```bash
 git remote add upstream URL
 ```
 
-**Change a remote URL:**
+### Change a remote URL
 
 ```bash
 git remote set-url upstream NEW_URL
 ```
 
-**Remove a remote:**
+### Remove a remote
 
 ```bash
 git remote remove upstream
 ```
 
-**Inspect a remote in detail:**
+### Inspect a remote in detail
 
 ```bash
 git remote show upstream
@@ -355,7 +355,7 @@ docs/contributor-profile.md
 Example content:
 
 ```markdown
-# Contributor Profile
+## Contributor Profile
 
 ## About
 
@@ -464,7 +464,7 @@ Alternatively:
 Your Pull Request should have:
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Base repository | `octocat/Spoon-Knife` |
 | Base branch | Original repository's default branch |
 | Head repository | `YOUR_USERNAME/Spoon-Knife` |
@@ -694,7 +694,7 @@ Do not use ordinary `git push --force` as a routine solution. It can overwrite c
 ### Which approach should you choose?
 
 | Situation | Recommended approach |
-|---|---|
+| --- | --- |
 | You want a simple workflow and explicit merge history | Merge |
 | Your project requires a linear feature-branch history | Rebase |
 | You are collaborating on a shared branch | Coordinate before rebasing |
@@ -999,7 +999,7 @@ git push origin docs/add-contributor-profile
 ## 18. Important commands reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git clone URL` | Clone a repository |
 | `git remote -v` | Display remote names and URLs |
 | `git remote add upstream URL` | Add the original repository |
@@ -1095,7 +1095,7 @@ Then open a Pull Request into your training repository's `main` branch and follo
 
 ## 21. What comes next?
 
-**Lesson 10 — GitHub Issues and Project Planning**
+### Lesson 10 — GitHub Issues and Project Planning
 
 We will move from repository collaboration into work tracking:
 

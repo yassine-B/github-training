@@ -32,7 +32,7 @@ GitHub Issues are used to plan, discuss, assign, and track work in a repository.
 You can use Issues to track:
 
 | Issue category | Example |
-|---|---|
+| --- | --- |
 | Bug | Login returns HTTP 500 |
 | Feature | Add password reset functionality |
 | Enhancement | Improve API response validation |
@@ -49,7 +49,7 @@ An Issue is not necessarily a bug. It represents a piece of work that needs disc
 These two features have different responsibilities.
 
 | GitHub Issues | GitHub Pull Requests |
-|---|---|
+| --- | --- |
 | Track work | Propose code changes |
 | Describe problems | Show implemented changes |
 | Discuss requirements | Review code |
@@ -120,11 +120,11 @@ You can use labels for status, but GitHub Projects also provides dedicated Statu
 
 ### 3.1 Open versus closed
 
-**Open Issue:**
+### Open Issue
 
 The work is not finished, or the discussion is still active.
 
-**Closed Issue:**
+### Closed Issue
 
 The work is completed, rejected, duplicated, or otherwise no longer needs to remain open.
 
@@ -149,13 +149,13 @@ If you cannot see the Issues tab, check whether Issues are enabled in repository
 
 Use this example:
 
-**Title:**
+### Title
 
 ```text
 [DOCS] Add a GitHub workflow diagram to the repository documentation
 ```
 
-**Description:**
+### Description
 
 ```markdown
 ## Summary
@@ -395,7 +395,7 @@ The exact placement of the Labels page may vary with the GitHub interface.
 For this training repository, create the following labels:
 
 | Label | Purpose |
-|---|---|
+| --- | --- |
 | `bug` | Something is not working |
 | `feature` | New functionality |
 | `enhancement` | Improve existing functionality |
@@ -495,7 +495,7 @@ As work is completed, GitHub displays milestone progress.
 They serve different purposes.
 
 | Labels | Milestones |
-|---|---|
+| --- | --- |
 | Categorize work | Group work toward a target |
 | Can be reused across many projects | Represent a specific target |
 | Examples: bug, backend, priority:high | Examples: Module 1, v1.1.0 |
@@ -509,21 +509,21 @@ They serve different purposes.
 4. Select **New milestone**.
 5. Enter:
 
-**Title:**
+### Title
 
 ```text
 Module 1 — Code tab
 ```
 
-**Description:**
+### Description
 
 ```text
 Complete the GitHub Code tab training module, including practical exercises,
 documentation, collaboration, and release preparation.
 ```
 
-6. Set a due date if you have a meaningful deadline.
-7. Create the milestone.
+1. Set a due date if you have a meaningful deadline.
+2. Create the milestone.
 
 ### 8.3 Associate Issues with the milestone
 
@@ -618,7 +618,7 @@ The exact controls depend on the GitHub interface and feature availability.
 ### 9.3 Task lists versus sub-issues
 
 | Task list | Sub-issues |
-|---|---|
+| --- | --- |
 | Simple checklist | Separate tracked Issues |
 | Good for small implementation steps | Good for independently managed tasks |
 | Tasks live inside one Issue | Each task has its own discussion and metadata |
@@ -770,7 +770,7 @@ GitHub supports search qualifiers.
 ### 12.1 Common filters
 
 | Search query | Meaning |
-|---|---|
+| --- | --- |
 | `is:open` | Open Issues and Pull Requests |
 | `is:closed` | Closed Issues and Pull Requests |
 | `is:issue` | Issues only |
@@ -1036,26 +1036,26 @@ Projects can be associated with a repository, an organization, or a user account
 GitHub Deep Dive — Development Board
 ```
 
-5. Create the Project.
+1. Create the Project.
 
 Depending on the interface, you may be able to choose a table, board, or roadmap layout.
 
 ### 14.2 Understand Project views
 
-**Table view**
+### Table view
 
 Useful when you need to inspect many work items and their metadata.
 
 Example:
 
 | Title | Status | Priority | Area |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Add workflow diagram | Todo | Medium | Documentation |
 | Create issue templates | Done | High | Documentation |
 | Practice fork workflow | In Progress | Medium | Git |
 | Study GitHub Actions | Backlog | High | DevOps |
 
-**Board view**
+### Board view
 
 Useful for visualizing workflow status.
 
@@ -1066,7 +1066,7 @@ Actions        Issue forms   Fork workflow     Branches
 Projects       Git tags      PR review         Commits
 ```
 
-**Roadmap view**
+### Roadmap view
 
 Useful for planning work across dates and time periods.
 
@@ -1077,7 +1077,7 @@ For this training repository, a table or board is sufficient.
 Projects can contain fields such as:
 
 | Field | Purpose |
-|---|---|
+| --- | --- |
 | Status | Current workflow state |
 | Priority | Importance of work |
 | Assignees | Responsible people |
@@ -1217,7 +1217,7 @@ You can use the checklist initially and convert the larger tasks into sub-issues
 Create these Issues:
 
 | Title | Labels | Priority |
-|---|---|---|
+| --- | --- | --- |
 | Create order database models | `backend`, `feature` | High |
 | Create order API endpoints | `backend`, `feature` | High |
 | Implement order validation | `backend`, `enhancement` | High |
@@ -1276,7 +1276,7 @@ GitHub CLI (`gh`) lets you interact with GitHub without opening the browser for 
 
 If you have not installed it, follow the official GitHub CLI installation instructions:
 
-https://cli.github.com/
+<https://cli.github.com/>
 
 ### 16.1 Authenticate
 
@@ -1409,7 +1409,7 @@ gh issue reopen 15
 ### 16.8 Understand the commands
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `gh auth status` | Check authentication |
 | `gh issue list` | List Issues |
 | `gh issue view 15` | View an Issue |
@@ -1591,9 +1591,9 @@ Then:
 Closes #15
 ```
 
-8. Review the Pull Request.
-9. Merge it into `main`.
-10. Confirm that GitHub closes the linked Issue.
+1. Review the Pull Request.
+2. Merge it into `main`.
+3. Confirm that GitHub closes the linked Issue.
 
 Use a real Issue number from your repository.
 
@@ -1729,7 +1729,7 @@ Use these resources when practicing:
 
 ## 22. What comes next?
 
-**Lesson 11 — GitHub Discussions and Community Collaboration**
+### Lesson 11 — GitHub Discussions and Community Collaboration
 
 We will cover:
 

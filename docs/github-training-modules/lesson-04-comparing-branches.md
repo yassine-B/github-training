@@ -313,7 +313,7 @@ Do not merge until you understand the changes.
 ## 13. Important commands reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git fetch origin` | Update remote-tracking references |
 | `git branch -a` | List local and remote-tracking branches |
 | `git diff A..B` | Compare two branch tips |

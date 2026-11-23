@@ -60,7 +60,7 @@ git version 2.x.x
 
 If Git is not installed, download it from:
 
-https://git-scm.com/downloads
+<https://git-scm.com/downloads>
 
 ## 4. Configure Git
 
@@ -176,7 +176,7 @@ docs/project-overview.md
 Example content:
 
 ```markdown
-# Project Overview
+## Project Overview
 
 This repository is used to learn Git and GitHub.
 
@@ -291,7 +291,7 @@ Other important repository tabs include:
 ## 14. Important commands reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `git --version` | Check Git version |
 | `git config --global --list` | Display global configuration |
 | `git clone URL` | Clone a repository |

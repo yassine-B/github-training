@@ -1,5 +1,4 @@
 
-
 # Contributing Guidelines
 
 Thank you for considering contributing to GitHub Deep Dive Training.
@@ -41,7 +40,7 @@ feat/add-security-exercise
 Recommended prefixes:
 
 | Prefix | Purpose |
-|---|---|
+| --- | --- |
 | `feat/` | New functionality or training material |
 | `fix/` | Corrections and fixes |
 | `docs/` | Documentation changes |
@@ -216,4 +215,3 @@ All contributors must follow `CODE_OF_CONDUCT.md`.
 For questions or suggestions, open a GitHub Issue with enough information for maintainers to understand the request.
 
 Thank you for helping improve this training repository.
-

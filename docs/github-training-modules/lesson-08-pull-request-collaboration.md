@@ -1,5 +1,4 @@
 
-
 # Lesson 08 — Pull Request Collaboration and Review Workflow
 
 **Module:** 01 — Code  
@@ -106,7 +105,7 @@ However, important changes should be reviewed before merging.
 ### Important Pull Request terminology
 
 | Term | Meaning |
-|---|---|
+| --- | --- |
 | Base branch | Branch receiving the changes |
 | Head branch | Branch containing the proposed changes |
 | Reviewer | Person reviewing the changes |
@@ -163,7 +162,7 @@ docs/github/module-01-code/pr-exercise.md
 Add:
 
 ```markdown
-# Pull Request Exercise
+## Pull Request Exercise
 
 This file is used to practise the Pull Request workflow.
 
@@ -406,7 +405,7 @@ docs/github/module-01-code/draft-exercise.md
 Add:
 
 ```markdown
-# Draft Pull Request Exercise
+## Draft Pull Request Exercise
 
 This document demonstrates a work-in-progress Pull Request.
 ```
@@ -446,7 +445,7 @@ The reviewer can:
 GitHub provides three main review decisions.
 
 | Decision | Meaning |
-|---|---|
+| --- | --- |
 | Comment | Provide feedback without approving or requesting changes |
 | Approve | Indicate that the changes are acceptable |
 | Request changes | Ask the author to correct something before merging |
@@ -817,7 +816,7 @@ The feature commits receive new commit hashes because their parent relationships
 ### Merge versus rebase
 
 | Operation | Effect |
-|---|---|
+| --- | --- |
 | `git merge origin/main` | Integrates main into the feature branch |
 | `git rebase origin/main` | Replays feature commits on top of main |
 
@@ -900,7 +899,7 @@ Project status: Completed
 Meaning:
 
 | Marker | Meaning |
-|---|---|
+| --- | --- |
 | `<<<<<<< HEAD` | Beginning of the current branch's version |
 | `=======` | Separates the two versions |
 | `>>>>>>> branch-name` | End of the incoming branch's version |
@@ -933,7 +932,7 @@ docs/github/module-01-code/conflict-exercise.md
 Add:
 
 ```markdown
-# Merge Conflict Exercise
+## Merge Conflict Exercise
 
 Project status: Initial
 ```
@@ -1026,7 +1025,7 @@ For this exercise, do not blindly select an option. Understand what each version
 Replace the conflicting content with:
 
 ```markdown
-# Merge Conflict Exercise
+## Merge Conflict Exercise
 
 Project status: Resolved successfully
 ```
@@ -1240,7 +1239,7 @@ project/
 You might assign:
 
 | Directory | Responsible team |
-|---|---|
+| --- | --- |
 | `backend/` | Backend team |
 | `frontend/` | Frontend team |
 | `docs/` | Documentation team |
@@ -1266,20 +1265,20 @@ Use only one location for your exercise:
 Example:
 
 ```text
-# All repository files
+## All repository files
 * @github-username
 
-# Documentation
+## Documentation
 /docs/ @github-username
 
-# GitHub configuration
+## GitHub configuration
 /.github/ @github-username
 ```
 
 Explanation:
 
 | Pattern | Meaning |
-|---|---|
+| --- | --- |
 | `*` | All files |
 | `/docs/` | Files under the docs directory |
 | `/.github/` | Files under the .github directory |
@@ -1495,7 +1494,7 @@ docs/github/module-01-code/collaboration-practice.md
 Content:
 
 ```markdown
-# Collaboration Practice
+## Collaboration Practice
 
 ## Objective
 
@@ -1787,7 +1786,7 @@ Prepare a changelog that summarizes the completed lessons and practical exercise
 
 ## 21. What comes next?
 
-**Lesson 09 — GitHub Forks and Open-Source Contribution Workflow**
+### Lesson 09 — GitHub Forks and Open-Source Contribution Workflow
 
 Topics:
 
@@ -1801,4 +1800,3 @@ Topics:
 - Contributing to external repositories.
 - Handling upstream changes.
 - Open-source contribution etiquette.
-

@@ -16,7 +16,7 @@ By the end of this lesson, you should be able to:
 
 ---
 
-# Part 1 — Understand Git's internal architecture
+## Part 1 — Understand Git's internal architecture
 
 ## 2. The Git object model
 
@@ -66,7 +66,7 @@ For example, imagine this file:
 `README.md`
 
 ```markdown
-# Git Internals Training
+## Git Internals Training
 
 This repository is used to understand Git internals.
 ```
@@ -141,11 +141,11 @@ A merge commit normally has two or more parents.
 
 Git supports two important types of tags:
 
-**Lightweight tag**
+### Lightweight tag
 
 A lightweight tag is a reference directly pointing to an object, commonly a commit.
 
-**Annotated tag**
+### Annotated tag
 
 An annotated tag is a separate Git object containing:
 
@@ -165,7 +165,7 @@ git tag -a v1.0.0 -m "First stable release"
 
 ---
 
-# Part 2 — Understand the `.git` directory
+## Part 2 — Understand the `.git` directory
 
 ## 3. Inspect the repository structure
 
@@ -262,7 +262,7 @@ You will see references to local branches and tags.
 
 ---
 
-# Part 3 — Understand content-addressable storage
+## Part 3 — Understand content-addressable storage
 
 ## 4. How Git identifies objects
 
@@ -311,7 +311,7 @@ A filename change without a content change does not require a new blob. The tree
 
 ---
 
-# Part 4 — Create a Git internals laboratory
+## Part 4 — Create a Git internals laboratory
 
 ## 5. Create a separate laboratory repository
 
@@ -344,7 +344,7 @@ Create files:
 `README.md`
 
 ```markdown
-# Git Internals Lab
+## Git Internals Lab
 
 This repository is used to explore Git's internal object database.
 ```
@@ -352,7 +352,7 @@ This repository is used to explore Git's internal object database.
 `docs/first-file.md`
 
 ```markdown
-# First File
+## First File
 
 This is the first file in the Git internals laboratory.
 ```
@@ -375,7 +375,7 @@ You now have a repository with at least one commit, a root tree and multiple blo
 
 ---
 
-# Part 5 — Inspect Git objects
+## Part 5 — Inspect Git objects
 
 ## 6. Discover object IDs
 
@@ -506,7 +506,7 @@ git rev-list --parents -n 1 HEAD
 
 ---
 
-# Part 6 — Create and inspect blobs manually
+## Part 6 — Create and inspect blobs manually
 
 ## 7. Use `git hash-object`
 
@@ -582,7 +582,7 @@ The object ID should now be different.
 
 ---
 
-# Part 7 — Understand the index and staging area
+## Part 7 — Understand the index and staging area
 
 ## 8. The Git index
 
@@ -651,7 +651,7 @@ Record what changed in the index and what changed in the commit.
 
 ---
 
-# Part 8 — Understand commits and snapshots
+## Part 8 — Understand commits and snapshots
 
 ## 9. A commit is a snapshot, not a patch
 
@@ -725,7 +725,7 @@ The diff is calculated from the snapshots. It is not the primary representation 
 
 ---
 
-# Part 9 — Understand branches and references
+## Part 9 — Understand branches and references
 
 ## 10. Branches are references
 
@@ -829,7 +829,7 @@ These commands help you distinguish between:
 
 ---
 
-# Part 10 — Understand merge commits
+## Part 10 — Understand merge commits
 
 ## 11. Inspect a merge commit
 
@@ -907,7 +907,7 @@ The merge commit still points to a tree representing the resulting repository sn
 
 ---
 
-# Part 11 — Loose objects and packfiles
+## Part 11 — Loose objects and packfiles
 
 ## 12. What are loose objects?
 
@@ -1055,13 +1055,13 @@ Git commonly uses packed objects when communicating with remote repositories.
 
 ---
 
-# Part 12 — Git plumbing versus porcelain
+## Part 12 — Git plumbing versus porcelain
 
 ## 13. Understand the distinction
 
 Git commands are often grouped into two categories.
 
-**Porcelain commands**
+### Porcelain commands
 
 These are user-facing commands designed for everyday workflows.
 
@@ -1078,7 +1078,7 @@ git push
 git pull
 ```
 
-**Plumbing commands**
+### Plumbing commands
 
 These expose lower-level Git functionality.
 
@@ -1125,7 +1125,7 @@ Use these commands carefully. Some plumbing commands can directly modify Git's i
 
 ---
 
-# Part 13 — Advanced laboratory: create a tree and commit
+## Part 13 — Advanced laboratory: create a tree and commit
 
 ## 14. Create a tree from the index
 
@@ -1212,7 +1212,7 @@ An object that is not reachable from a reference may eventually be eligible for 
 
 ---
 
-# Part 14 — Understand object reachability
+## Part 14 — Understand object reachability
 
 ## 15. What does reachable mean?
 
@@ -1282,7 +1282,7 @@ Do not attempt to manually delete objects to clean up the repository.
 
 ---
 
-# Part 15 — How Git uses these internals in everyday operations
+## Part 15 — How Git uses these internals in everyday operations
 
 ## 16. What happens when you run `git add`?
 
@@ -1336,7 +1336,7 @@ The exact transfer process depends on the protocol, server and clone options.
 
 ---
 
-# Part 16 — Practical exercises
+## Part 16 — Practical exercises
 
 ## 17. Exercise 1: Identify object types
 
@@ -1453,7 +1453,7 @@ If the repository is too small to generate a packfile, document that result rath
 
 ---
 
-# Part 17 — Repository training deliverables
+## Part 17 — Repository training deliverables
 
 ## 18. Add the lesson to your main training repository
 
@@ -1487,7 +1487,7 @@ docs/
 Suggested report structure:
 
 ````markdown
-# Lesson 18 — Git Internals Lab Report
+## Lesson 18 — Git Internals Lab Report
 
 ## 1. Environment
 
@@ -1570,11 +1570,9 @@ Findings:
 4. Why are branches references rather than copies?
 5. What is the purpose of a packfile?
 
-````
-
 ---
 
-# Part 18 — Git workflow for the lesson
+## Part 18 — Git workflow for the lesson
 
 ## 19. Create your branch
 
@@ -1675,7 +1673,7 @@ Merge the PR after reviewing it.
 
 ---
 
-# Part 19 — Create an annotated tag and GitHub Release
+## Part 19 — Create an annotated tag and GitHub Release
 
 ## 20. Tag the lesson
 
@@ -1718,10 +1716,10 @@ Open your repository on GitHub.
 Module 1 — Lesson 18: Git Internals
 ```
 
-5. Add these release notes:
+1. Add these release notes:
 
 ```markdown
-# Lesson 18 — Git Internals
+## Lesson 18 — Git Internals
 
 ## Topics covered
 
@@ -1753,11 +1751,11 @@ Module 1 — Lesson 18: Git Internals
 - [ ] Annotated tag created
 ```
 
-6. Publish the release.
+1. Publish the release.
 
 ---
 
-# Part 20 — Final knowledge check
+## Part 20 — Final knowledge check
 
 ## 21. Questions
 
@@ -1804,10 +1802,10 @@ Answer these without looking at the lesson.
 
 ---
 
-# Lesson 18 complete
+## Lesson 18 complete
 
 You now have a foundation for understanding Git beyond its everyday command-line interface.
 
-**Next lesson — Lesson 19: Advanced Git Configuration, Aliases, Attributes and Ignore Rules**
+### Next lesson — Lesson 19: Advanced Git Configuration, Aliases, Attributes and Ignore Rules
 
 The next lesson will cover repository-level and global Git configuration, configuration precedence, aliases, `.gitattributes`, line-ending normalization, binary files, diff and merge drivers, `.gitignore`, and practical configuration standards for professional development teams.

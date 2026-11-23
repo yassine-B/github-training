@@ -63,7 +63,7 @@ Discussions give people a place to talk about them.
 Understanding when to use each feature is important.
 
 | Feature | Main purpose | Example |
-|---|---|---|
+| --- | --- | --- |
 | Discussions | Open-ended conversations | Should we support multiple branches? |
 | Issues | Track actionable work | Implement multiple branch support |
 | Pull Requests | Propose code changes | Add branch management functionality |
@@ -72,7 +72,7 @@ Understanding when to use each feature is important.
 
 A user creates a Discussion:
 
-**Title:**
+### Title
 
 `Should the restaurant POS support multiple branches?`
 
@@ -125,7 +125,7 @@ Merge
 ### 3.2 Decision table
 
 | Situation | Use |
-|---|---|
+| --- | --- |
 | A user asks how to configure something | Discussion |
 | A user reports an application bug | Issue |
 | A user proposes a new feature | Discussion |
@@ -157,14 +157,14 @@ When enabling Discussions, GitHub may invite you to create a welcome post.
 
 Use the following example.
 
-**Title:**
+### Title
 
 `Welcome to GitHub Deep Dive Discussions`
 
-**Content:**
+### Content
 
 ```markdown
-# Welcome to GitHub Deep Dive Discussions
+## Welcome to GitHub Deep Dive Discussions
 
 Welcome to the community space for the GitHub Deep Dive training repository.
 
@@ -203,7 +203,7 @@ Categories organize conversations and determine their format.
 GitHub provides several default categories.
 
 | Category | Purpose | Format |
-|---|---|---|
+| --- | --- | --- |
 | Announcements | Important project updates | Announcement |
 | General | General conversations | Open-ended |
 | Ideas | Suggestions and improvements | Open-ended |
@@ -215,7 +215,7 @@ You can create additional categories depending on the project.
 
 ### 5.1 Understand the three main formats
 
-**Open-ended discussion**
+### Open-ended discussion
 
 Used for conversations without a fixed question-and-answer structure.
 
@@ -225,7 +225,7 @@ Example:
 
 Members can discuss different possibilities.
 
-**Question and Answer**
+### Question and Answer
 
 Used when someone asks a question and the community provides answers.
 
@@ -235,7 +235,7 @@ Example:
 
 A useful response can be marked as the accepted answer.
 
-**Announcement**
+### Announcement
 
 Used for important updates published by maintainers.
 
@@ -253,7 +253,7 @@ Announcement creation is restricted to people with the appropriate maintainer pe
 For your training repository, create or retain these categories:
 
 | Category | Format | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Announcements | Announcement | Important repository updates |
 | General | Open-ended | General conversations |
 | Questions | Q&A | Learning questions |
@@ -281,11 +281,11 @@ A category should have a clear purpose. Avoid creating multiple categories that 
 
 Create a new discussion in the `General` category.
 
-**Title:**
+### Title
 
 `How should we organize our GitHub training repository?`
 
-**Description:**
+### Description
 
 ```markdown
 ## Background
@@ -357,11 +357,11 @@ Use labels when they improve filtering. Do not create unnecessary duplicates.
 
 Now create a Discussion in your `Questions` category.
 
-**Title:**
+### Title
 
 `What is the difference between git fetch and git pull?`
 
-**Content:**
+### Content
 
 ```markdown
 ## Question
@@ -510,7 +510,7 @@ A locked discussion may still allow reactions if the moderator enables them.
 Locking and closing are different operations:
 
 | Close | Lock |
-|---|---|
+| --- | --- |
 | Marks the discussion as concluded | Restricts further conversation |
 | Communicates that it is no longer active | Prevents additional comments |
 | Can be reopened | Can be unlocked |
@@ -678,7 +678,7 @@ You can use these to explain:
 Example text:
 
 ```markdown
-# Discussion Guidelines
+## Discussion Guidelines
 
 Thank you for participating in this project.
 
@@ -786,7 +786,7 @@ Not everyone can manage Discussions.
 A simplified permission overview:
 
 | Action | Typical permission |
-|---|---|
+| --- | --- |
 | Read public Discussions | Anyone with access to the public repository |
 | Create a Discussion | Depends on repository settings and access |
 | Comment on a Discussion | Depends on repository visibility and access |
@@ -830,7 +830,7 @@ GitHub's Discussions interface provides category navigation and search capabilit
 For a small open-source project:
 
 | Category | Example |
-|---|---|
+| --- | --- |
 | Announcements | Release v1.2.0 is available |
 | Questions | How do I configure the application? |
 | Ideas | Suggest a new feature |
@@ -867,7 +867,7 @@ Verify that each category has the intended format.
 
 Create at least four Discussions:
 
-**Discussion 1 — General**
+### Discussion 1 — General
 
 Title:
 
@@ -875,7 +875,7 @@ Title:
 How should we structure the GitHub Deep Dive training?
 ```
 
-**Discussion 2 — Q&A**
+### Discussion 2 — Q&A
 
 Title:
 
@@ -883,7 +883,7 @@ Title:
 When should I use git merge instead of git rebase?
 ```
 
-**Discussion 3 — Ideas**
+### Discussion 3 — Ideas
 
 Title:
 
@@ -891,7 +891,7 @@ Title:
 Should we add a complete sample project to the training?
 ```
 
-**Discussion 4 — Show and Tell**
+### Discussion 4 — Show and Tell
 
 Title:
 
@@ -995,7 +995,7 @@ Keep the Discussions page useful by closing conversations that have reached a co
 ## 18. Important concepts reference
 
 | Concept | Purpose |
-|---|---|
+| --- | --- |
 | Discussion | Community conversation |
 | Category | Organizes discussions |
 | Open-ended format | General conversation |
@@ -1123,7 +1123,7 @@ Use these resources while practicing:
 
 ## 22. What comes next?
 
-**Lesson 12 — GitHub Releases, Release Management, and Changelogs**
+### Lesson 12 — GitHub Releases, Release Management, and Changelogs
 
 We will build on Lesson 5 and learn how to manage releases in a real development workflow:
 

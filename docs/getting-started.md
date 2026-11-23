@@ -9,7 +9,7 @@ Training repository and begin working through its lessons.
 Before starting, install the following tools:
 
 | Tool | Purpose |
-|---|---|
+| --- | --- |
 | Git | Version control |
 | GitHub Account | Repository hosting and collaboration |
 | GitHub CLI | Interacting with GitHub from the terminal |
@@ -153,7 +153,7 @@ mkdocs serve
 
 Open:
 
-http://127.0.0.1:8000
+<http://127.0.0.1:8000>
 
 Build the documentation:
 

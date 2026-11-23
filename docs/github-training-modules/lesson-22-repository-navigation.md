@@ -113,7 +113,7 @@ If a file cannot be found, use GitHub Code Search with an appropriate `path:` qu
 Press `?` on GitHub to display the available shortcuts.
 
 | Shortcut | Action |
-|---|---|
+| --- | --- |
 | `t` | Open the file finder |
 | `l` | Jump to a line in a code file |
 | `w` | Switch branch or tag |
@@ -177,7 +177,7 @@ Do not rely exclusively on commit messages. Inspect the actual changes.
 ### Different history views
 
 | View | Purpose |
-|---|---|
+| --- | --- |
 | Repository history | Investigate commits across the repository |
 | File history | Investigate commits associated with a file |
 | Blame | Identify the last modifying revision for each current line |
@@ -210,12 +210,12 @@ A repository can use `.git-blame-ignore-revs` to exclude selected commits from b
 Example:
 
 ```text
-# .git-blame-ignore-revs
+## .git-blame-ignore-revs
 
-# Repository-wide formatting
+## Repository-wide formatting
 <FORMATTING_COMMIT_SHA>
 
-# Large automated migration
+## Large automated migration
 <MIGRATION_COMMIT_SHA>
 ```
 
@@ -489,7 +489,7 @@ exercises/module-01-code/lesson-22-repository-investigation.md
 Use this structure:
 
 ```markdown
-# Repository Investigation — Lesson 22
+## Repository Investigation — Lesson 22
 
 ## 1. Repository information
 
@@ -584,15 +584,15 @@ exercises/module-01-code/advanced-repository-investigation.md
 
 ## 16. What comes next?
 
-**Lesson 23: GitHub Blame, Commit History, and Line-Level Investigation — Advanced Practical Investigation**
+### Lesson 23: GitHub Blame, Commit History, and Line-Level Investigation — Advanced Practical Investigation
 
 In the next lesson, we will go deeper into tracing changes across commits, investigating code ownership, understanding historical modifications, and combining GitHub's history tools with Git CLI.
 
 ## References
 
-- GitHub Docs — Finding files on GitHub: https://docs.github.com/en/search-github/searching-on-github/finding-files-on-github
-- GitHub Docs — Viewing and understanding files: https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files
-- GitHub Docs — Navigating code on GitHub: https://docs.github.com/en/repositories/working-with-files/using-files/navigating-code-on-github
-- GitHub Docs — Getting permanent links to files: https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files
-- GitHub Docs — Keyboard shortcuts: https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts
-- Git documentation — git-blame: https://git-scm.com/docs/git-blame
+- GitHub Docs — Finding files on GitHub: <https://docs.github.com/en/search-github/searching-on-github/finding-files-on-github>
+- GitHub Docs — Viewing and understanding files: <https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files>
+- GitHub Docs — Navigating code on GitHub: <https://docs.github.com/en/repositories/working-with-files/using-files/navigating-code-on-github>
+- GitHub Docs — Getting permanent links to files: <https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files>
+- GitHub Docs — Keyboard shortcuts: <https://docs.github.com/en/get-started/accessibility/keyboard-shortcuts>
+- Git documentation — git-blame: <https://git-scm.com/docs/git-blame>

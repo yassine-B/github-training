@@ -1,5 +1,6 @@
 # Module 1 — Code Tab
-# Lesson 16: Git Hooks — Automating Checks and Enforcing Repository Standards
+
+## Lesson 16: Git Hooks — Automating Checks and Enforcing Repository Standards
 
 **Filename:** `docs/github/module-01-code/lesson-16-git-hooks.md`
 **Suggested branch:** `docs/add-git-hooks-lesson`
@@ -41,7 +42,7 @@ Hooks allow you to automate repetitive tasks and enforce development standards.
 ### Real-world examples
 
 | Event | Automated task |
-|---|---|
+| --- | --- |
 | Before commit | Check formatting and whitespace |
 | Before commit | Run linting on changed files |
 | Before commit | Detect accidentally committed secrets |
@@ -174,7 +175,7 @@ GitHub users generally do not manage GitHub's underlying server-side Git hooks d
 ### Comparison
 
 | Feature | Client-side | Server-side |
-|---|---|---|
+| --- | --- | --- |
 | Execution location | Developer's machine | Git server |
 | Runs before local commit | Yes | No |
 | Can validate commit messages | Yes | Yes, where supported |
@@ -284,7 +285,7 @@ Possible use:
 ### 5.9 Server-side hooks
 
 | Hook | Purpose |
-|---|---|
+| --- | --- |
 | `pre-receive` | Runs before a push is accepted; can reject the entire push |
 | `update` | Runs for each ref being updated; can reject an individual ref |
 | `post-receive` | Runs after refs have been updated successfully |
@@ -293,7 +294,7 @@ You do not need to implement server-side hooks in this exercise. Focus on client
 
 ---
 
-# Part A — Native Git hooks
+## Part A — Native Git hooks
 
 ## 6. Create your first `pre-commit` hook
 
@@ -429,7 +430,7 @@ feat(api)!: remove deprecated response format
 Common types:
 
 | Type | Purpose |
-|---|---|
+| --- | --- |
 | `feat` | New functionality |
 | `fix` | Bug fix |
 | `docs` | Documentation |
@@ -614,7 +615,7 @@ You can document this setup in your README or automate it with a project setup s
 
 ---
 
-# Part B — The pre-commit framework
+## Part B — The pre-commit framework
 
 ## 10. What is pre-commit?
 
@@ -641,7 +642,7 @@ The framework manages hook environments and executes configured checks.
 
 Official documentation:
 
-https://pre-commit.com/
+<https://pre-commit.com/>
 
 ## 11. Install pre-commit
 
@@ -716,7 +717,7 @@ Each repository specifies:
 Examples:
 
 | Hook | Purpose |
-|---|---|
+| --- | --- |
 | `trailing-whitespace` | Removes trailing whitespace |
 | `end-of-file-fixer` | Ensures a final newline |
 | `check-yaml` | Checks YAML syntax |
@@ -827,7 +828,7 @@ You can keep the configuration at the repository root or in a backend-specific l
 
 ---
 
-# Part C — Husky, lint-staged and Commitlint
+## Part C — Husky, lint-staged and Commitlint
 
 ## 15. What is Husky?
 
@@ -845,7 +846,7 @@ It is commonly used with:
 
 Official documentation:
 
-https://typicode.github.io/husky/
+<https://typicode.github.io/husky/>
 
 ### Why use Husky?
 
@@ -1034,12 +1035,12 @@ Commitlint supports additional rules and configurations. You can later configure
 
 Official documentation:
 
-https://commitlint.js.org/
+<https://commitlint.js.org/>
 
 ## 20. Husky vs native Git hooks vs pre-commit
 
 | Feature | Native Git hooks | pre-commit | Husky |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Primary use | Custom Git automation | Managed hooks | JavaScript project hooks |
 | Python support | Yes | Yes | Possible, but not its main focus |
 | Node.js support | Yes | Yes | Yes |
@@ -1052,20 +1053,23 @@ https://commitlint.js.org/
 
 For a DRF + React project:
 
-**Backend**
+### Backend
+
 - pre-commit
 - Ruff
 - Python formatting and linting
 - selected fast validation checks
 
-**Frontend**
+### Frontend
+
 - Husky
 - lint-staged
 - ESLint
 - Prettier
 - Commitlint
 
-**Repository**
+### Repository
+
 - GitHub Actions
 - Required status checks
 - Branch protection or repository rulesets
@@ -1074,7 +1078,7 @@ Avoid installing several competing hook managers without a clear reason. Decide 
 
 ---
 
-# Part D — Production workflow
+## Part D — Production workflow
 
 ## 21. How Git hooks fit into the development lifecycle
 
@@ -1229,7 +1233,7 @@ A hook that takes 30 seconds on every commit will frustrate developers.
 Use this division:
 
 | Check | Recommended stage |
-|---|---|
+| --- | --- |
 | Trailing whitespace | Pre-commit |
 | Formatting | Pre-commit |
 | Fast linting | Pre-commit |
@@ -1262,7 +1266,7 @@ These commands are useful for understanding the limitations of client-side hooks
 
 ---
 
-# Part E — Practical exercises
+## Part E — Practical exercises
 
 ## 24. Exercise 1: Native pre-commit hook
 
@@ -1407,7 +1411,7 @@ Include:
 Suggested policy:
 
 | Area | Tool | Stage |
-|---|---|---|
+| --- | --- | --- |
 | Python linting | Ruff | Pre-commit |
 | Python formatting | Ruff formatter | Pre-commit |
 | Frontend linting | ESLint | Pre-commit |
@@ -1422,7 +1426,7 @@ Suggested policy:
 
 ---
 
-# Part F — GitHub workflow and lesson delivery
+## Part F — GitHub workflow and lesson delivery
 
 ## 30. Add the lesson to your training repository
 
@@ -1613,10 +1617,10 @@ Open your repository:
 Module 1 — Lesson 16: Git Hooks
 ```
 
-5. Add these release notes:
+1. Add these release notes:
 
 ```markdown
-# Module 1 — Lesson 16: Git Hooks
+## Module 1 — Lesson 16: Git Hooks
 
 This lesson introduces automated Git workflows.
 
@@ -1651,11 +1655,11 @@ See:
 docs/github/module-01-code/lesson-16-git-hooks.md
 ```
 
-6. Publish the release.
+1. Publish the release.
 
 ---
 
-# Part G — Final checklist
+## Part G — Final checklist
 
 ## 36. Lesson completion checklist
 
@@ -1707,27 +1711,27 @@ docs/github/module-01-code/lesson-16-git-hooks.md
 
 ---
 
-# 37. Official documentation
+## 37. Official documentation
 
 Use these resources to deepen your understanding:
 
 | Resource | Link |
-|---|---|
-| Git Hooks | https://git-scm.com/docs/githooks |
-| Git Configuration | https://git-scm.com/docs/git-config |
-| pre-commit | https://pre-commit.com/ |
-| Husky | https://typicode.github.io/husky/ |
-| lint-staged | https://github.com/lint-staged/lint-staged |
-| Commitlint | https://commitlint.js.org/ |
-| Conventional Commits | https://www.conventionalcommits.org/ |
-| GitHub Actions | https://docs.github.com/en/actions |
-| GitHub Rulesets | https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets |
+| --- | --- |
+| Git Hooks | <https://git-scm.com/docs/githooks> |
+| Git Configuration | <https://git-scm.com/docs/git-config> |
+| pre-commit | <https://pre-commit.com/> |
+| Husky | <https://typicode.github.io/husky/> |
+| lint-staged | <https://github.com/lint-staged/lint-staged> |
+| Commitlint | <https://commitlint.js.org/> |
+| Conventional Commits | <https://www.conventionalcommits.org/> |
+| GitHub Actions | <https://docs.github.com/en/actions> |
+| GitHub Rulesets | <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets> |
 
 ---
 
-# 38. What comes next?
+## 38. What comes next?
 
-**Module 1 — Lesson 17: Git Reflog and Repository Recovery**
+### Module 1 — Lesson 17: Git Reflog and Repository Recovery
 
 The next lesson will cover how to recover from common Git mistakes and understand Git's reference history.
 
