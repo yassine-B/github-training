@@ -1,16 +1,22 @@
-
-
 # GitHub Deep Dive Training
 
 A practical, project-based training repository for learning Git, GitHub, collaborative development, repository management, automation, and software project workflows.
 
-## About this repository
+## About This Repository
 
 This repository contains structured lessons, practical exercises, examples, and checklists designed to help developers understand how to use GitHub in real software projects.
 
-The training follows a practical approach: learn a concept, understand the commands and GitHub features, apply them to the training repository, and document the result.
+The training follows a practical approach:
 
-## Learning objectives
+1. Learn a concept.
+2. Understand the commands and GitHub features.
+3. Apply the concept in a practice repository.
+4. Complete the corresponding exercises.
+5. Review and document the results.
+
+The repository is designed to evolve as new lessons and training modules are added.
+
+## Learning Objectives
 
 By completing this training, you should be able to:
 
@@ -24,46 +30,49 @@ By completing this training, you should be able to:
 - Use GitHub Projects for planning and tracking work.
 - Configure repository security and code quality features.
 - Understand organizations, teams, packages, and other GitHub services.
+- Apply professional repository management and collaboration practices.
 
-## Training modules
+## Training Modules
 
-| Module | Subject | Status |
-|---|---|---|
-| 01 | Code — Repository and Git fundamentals | In progress |
-| 02 | Issues — Tracking bugs and feature requests | Planned |
-| 03 | Pull Requests — Collaboration and code review | Planned |
-| 04 | Agents — GitHub Copilot and AI-assisted workflows | Planned |
-| 05 | Actions — Automation and CI/CD | Planned |
-| 06 | Projects — Planning and tracking work | Planned |
-| 07 | Wiki — Project documentation | Planned |
-| 08 | Discussions — Community communication | Planned |
-| 09 | Security and code quality | Planned |
-| 10 | Insights — Repository analytics | Planned |
-| 11 | Settings — Repository configuration | Planned |
-| 12 | GitHub ecosystem — Organizations, Teams, Packages, CLI, APIs, and more | Planned |
+See the `docs/github-training-modules/` directory for the lesson documents.
 
-See the `docs/github/` directory for lesson documents.
+## Documentation Website
 
-## Repository structure
+The training documentation is published using MkDocs Material and GitHub Pages.
+
+The website provides access to the training lessons, learning instructions, and technical documentation.
+
+[Visit the Documentation Website](https://yassine-B.github.io/github-training/)
+
+To preview the documentation locally, see the [Getting Started Guide](docs/getting-started.md).
+
+## Repository Structure
 
 ```text
-.
+github-training/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   └── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/
 ├── docs/
-│   └── github/
-│       └── module-01-code/
+│   ├── git-and-github-guides/
+│   └── github-training-modules/
+├── examples/
+├── exercises/
+├── .markdownlint.json
+├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── LICENSE
+├── mkdocs.yml
 ├── README.md
-└── SECURITY.md
+├── requirements-docs.txt
+├── SECURITY.md
+└── SUPPORT.md
 ```
 
-The structure may evolve as additional modules and exercises are added.
+The repository structure may evolve as additional modules and exercises are added.
 
-## Getting started
+## Getting Started
 
 ### Requirements
 
@@ -72,36 +81,35 @@ The structure may evolve as additional modules and exercises are added.
 - Visual Studio Code or another code editor.
 - Basic terminal knowledge.
 
-### Clone the repository
+### Clone the Repository
 
-```bash
-git clone https://github.com/[YOUR GITHUB USERNAME]/github-deep-dive-training.git
+Open PowerShell and run:
+
+```powershell
+git clone https://github.com/yassine-B/github-training.git
+
+cd github-training
 ```
 
-Move into the repository:
+Open the repository in Visual Studio Code:
 
-```bash
-cd github-deep-dive-training
-```
-
-Open it in Visual Studio Code:
-
-```bash
+```powershell
 code .
 ```
 
-### Start learning
+### Start Learning
 
-1. Open `docs/github/`.
+1. Open the `docs/github-training-modules/` directory.
 2. Select the module you want to study.
 3. Read the lesson from beginning to end.
-4. Follow the practical exercises.
+4. Follow the practical examples.
 5. Execute the commands yourself.
-6. Verify your results.
-7. Commit and push your work.
-8. Complete the module checklist before moving forward.
+6. Complete the exercises.
+7. Verify your results.
+8. Commit and push your work.
+9. Complete the module checklist before moving forward.
 
-## Learning approach
+## Learning Approach
 
 Each lesson should include:
 
@@ -114,7 +122,9 @@ Each lesson should include:
 - Common mistakes and troubleshooting.
 - A completion checklist.
 
-## Versioning and releases
+The goal is to apply the concepts in practical development workflows, not simply read the lessons.
+
+## Versioning and Releases
 
 This training repository uses Semantic Versioning:
 
@@ -129,7 +139,7 @@ Examples:
 
 Not every lesson requires a release. Releases should represent meaningful milestones.
 
-See the repository's GitHub Releases page for published versions.
+See the repository's [GitHub Releases](https://github.com/yassine-B/github-training/releases) page for published versions.
 
 ## Contributing
 
@@ -145,7 +155,9 @@ Use GitHub Issues to report problems or suggest improvements.
 
 ## Security
 
-If you discover a security vulnerability, please follow the instructions in [SECURITY.md](SECURITY.md). Avoid publishing sensitive vulnerability details in public Issues.
+If you discover a security vulnerability, please follow the instructions in [SECURITY.md](SECURITY.md).
+
+Avoid publishing sensitive vulnerability details in public Issues.
 
 ## License
 
@@ -153,7 +165,6 @@ This project is distributed under the license specified in the `LICENSE` file.
 
 ---
 
-**Maintained by:** [YOUR NAME OR GITHUB USERNAME]
+**Maintained by:** [yassine-B](https://github.com/yassine-B)
 
-**Repository:** https://github.com/[YOUR GITHUB USERNAME]/github-deep-dive-training
-
+**Repository:** [github-training](https://github.com/yassine-B/github-training)

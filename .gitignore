@@ -45,6 +45,7 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+
 # ==============================
 # Node.js / React
 # ==============================
@@ -90,3 +91,6 @@ Desktop.ini
 *.temp
 *.swp
 *.bak
+
+# MkDocs generated website
+/site/

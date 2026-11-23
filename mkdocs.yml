@@ -1,0 +1,93 @@
+
+site_name: GitHub Deep Dive Training
+site_description: Practical Git and GitHub training for developers
+site_author: yassine-B
+
+site_url: https://yassine-B.github.io/github-training/
+
+repo_url: https://github.com/yassine-B/github-training
+repo_name: yassine-B/github-training
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+  - pymdownx.details
+  - pymdownx.superfences
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+  - pymdownx.inlinehilite
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+
+  - GitHub Training Modules:
+      - Lesson 01 - Repository Basics: github-training-modules/lesson-01-repository-basics.md
+      - Lesson 02 - Branches: github-training-modules/lesson-02-branches.md
+      - Lesson 03 - Commits and History: github-training-modules/lesson-03-commits-and-history.md
+      - Lesson 04 - Comparing Branches: github-training-modules/lesson-04-comparing-branches.md
+      - Lesson 05 - Tags and Releases: github-training-modules/lesson-05-tags-and-releases.md
+      - Lesson 06 - Repository Standards: github-training-modules/lesson-06-repository-standards.md
+      - Lesson 07 - Repository Settings and Access Management: github-training-modules/lesson-07-repository-settings-and-access-management.md
+      - Lesson 08 - Pull Request Collaboration: github-training-modules/lesson-08-pull-request-collaboration.md
+      - Lesson 09 - Forks and Open Source Contributions: github-training-modules/lesson-09-forks-and-open-source-contributions.md
+      - Lesson 10 - Issues and Project Planning: github-training-modules/lesson-10-issues-and-project-planning.md
+      - Lesson 11 - GitHub Discussions and Community Collaboration: github-training-modules/lesson-11-github-discussions-and-community-collaboration.md
+      - Lesson 12 - Release Engineering: github-training-modules/lesson-12-release-engineering.md
+      - Lesson 13 - Git LFS, Gitignore, and Gitattributes: github-training-modules/lesson-13-git-lfs-gitignore-gitattributes.md
+      - Lesson 14 - Git Submodules: github-training-modules/lesson-14-git-submodules.md
+      - Lesson 15 - Git Worktrees: github-training-modules/lesson-15-git-worktrees.md
+      - Lesson 16 - Git Hooks: github-training-modules/lesson-16-git-hooks.md
+      - Lesson 17 - Git Reflog and Recovery: github-training-modules/lesson-17-git-reflog-recovery.md
+      - Lesson 18 - Git Internals: github-training-modules/lesson-18-git-internals.md
+      - Lesson 19 - Git Configuration: github-training-modules/lesson-19-git-configuration.md
+      - Lesson 20 - Advanced Git Workflows: github-training-modules/lesson-20-advanced-git-workflows.md
+      - Lesson 21 - GitHub Code Search: github-training-modules/lesson-21-github-code-search.md
+      - Lesson 22 - Repository Navigation: github-training-modules/lesson-22-repository-navigation.md
+      - Lesson 23 - Advanced Blame and History Investigation: github-training-modules/lesson-23-advanced-blame-history-investigation.md
+      - Lesson 24 - Release Management: github-training-modules/lesson-24-release-management.md
