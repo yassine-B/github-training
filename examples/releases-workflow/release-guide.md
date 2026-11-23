@@ -1,8 +1,9 @@
-## Releasing with GitHub CLI
+# Releasing with GitHub CLI
 
 When creating or managing releases in your repository, use the updated GitHub CLI syntax to ensure assets and release notes attach correctly.
 
-### 1. Create a Release
+## 1. Create a Release
+
 Create a new release, generate a tag if it doesn't exist, and include release notes:
 
 ```bash

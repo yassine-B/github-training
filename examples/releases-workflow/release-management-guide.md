@@ -47,7 +47,7 @@ A version number looks like **`v2.4.1`**, where:
 
 A typical release flows through a structured pipeline from development to public consumption:
 
-```
+```text
 [ Development / Commits ] 
          │
          ▼
@@ -98,7 +98,6 @@ Release assets are the supplementary files you attach to a GitHub Release so use
 * Compiled platform-specific binaries (`app-windows-amd64.exe`, `app-macos-arm64`, `app-linux-tar.gz`).
 * Installation packages (.msi, .deb, .pkg).
 * Checksums and cryptographic signatures (`SHA256SUMS`) for verifying download integrity.
-
 
 * **Automation Tip:** While you can drag and drop files manually into the GitHub web UI, production workflows typically use **GitHub Actions** (via actions like `softprops/action-gh-release`) to automatically build and attach artifacts whenever a tag is pushed.
 
