@@ -119,7 +119,7 @@ documentation, and exercises are welcome.
 Read the repository's contribution guidelines before
 submitting changes.
 
-[Contribution Guidelines](contributing/index.md)
+[Contribution Guidelines](https://github.com/yassine-B/github-training/blob/main/CONTRIBUTING.md)
 
 ---
 
