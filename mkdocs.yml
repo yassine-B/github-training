@@ -92,7 +92,7 @@ nav:
       - Lesson 23 - Advanced Blame and History Investigation: github-training-modules/lesson-23-advanced-blame-history-investigation.md
       - Lesson 24 - Release Management: github-training-modules/lesson-24-release-management.md
       - Lesson 25 - Documentation Management: github-training-modules/lesson-25-documentation-management.md
-      - Lesson 26 - Documentation Management: github-training-modules/lesson-26-issue-management.md
+      - Lesson 26 - Issue Management: github-training-modules/lesson-26-issue-management.md
       - Lesson 27 - Advanced Issues: github-training-modules/lesson-27-advanced-issues.md
       - Lesson 28 - Pull Request Fundamentals: github-training-modules/lesson-28-pr-fundamentals.md
       - Lesson 29 - Advanced Reviews: github-training-modules/lesson-29-advanced-reviews.md
@@ -100,3 +100,4 @@ nav:
       - Lesson 31 - Pull Request Automation and Governance: github-training-modules/lesson-31-pr-automation-governance.md
       - Lesson 32 - Pull Request Security and Quality Gates: github-training-modules/lesson-32-pr-security-quality-gates.md
       - Lesson 33 - Advanced Issue Management: github-training-modules/lesson-33-advanced-issue-management.md
+      - Lesson 34 - GitHub Actions Fundamentals: github-training-modules/lesson-34-github-actions-fundamentals.md
