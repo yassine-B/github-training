@@ -1,4 +1,4 @@
-## Lesson 41 — Advanced Security Automation & Compliance
+# Lesson 41 — Advanced Security Automation & Compliance
 
 **Level:** Advanced\
 **Category:** DevSecOps, Software Supply Chain Security, Security Governance\
