@@ -1,0 +1,23 @@
+name: Artifact Practice
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create sample output
+        run: |
+          mkdir -p output
+          echo "Training artifact" > output/result.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: training-output
+          path: output/
+          retention-days: 7
